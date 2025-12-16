@@ -1,0 +1,10 @@
+[project]
+name = "ai-powered-cloud-cost-optimizer"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain[huggingface]>=1.2.0",
+    "python-dotenv>=1.2.1",
+]
