@@ -1,0 +1,134 @@
+[
+  {
+    "month": "2025-01",
+    "service": "EC2",
+    "resource_id": "i-ecommerce-web-01",
+    "region": "ap-south-1",
+    "usage_type": "Linux/UNIX (on-demand)",
+    "usage_quantity": 720,
+    "unit": "hours",
+    "cost_inr": 900,
+    "desc": "Ecommerce web server"
+  },
+  {
+    "month": "2025-02",
+    "service": "EC2",
+    "resource_id": "i-ecommerce-api-01",
+    "region": "ap-south-1",
+    "usage_type": "Linux/UNIX (on-demand)",
+    "usage_quantity": 720,
+    "unit": "hours",
+    "cost_inr": 900,
+    "desc": "Ecommerce API server"
+  },
+  {
+    "month": "2025-01",
+    "service": "RDS",
+    "resource_id": "rds-e-commerce",
+    "region": "ap-south-1",
+    "usage_type": "db.t3.micro",
+    "usage_quantity": 20,
+    "unit": "hours",
+    "cost_inr": 1000,
+    "desc": "Ecommerce database"
+  },
+  {
+    "month": "2025-02",
+    "service": "S3",
+    "resource_id": "s3-e-commerce",
+    "region": "ap-south-1",
+    "usage_type": "Standard Storage",
+    "usage_quantity": 1000,
+    "unit": "GB",
+    "cost_inr": 2000,
+    "desc": "Ecommerce storage"
+  },
+  {
+    "month": "2025-01",
+    "service": "CloudFront",
+    "resource_id": "cloudfront-e-commerce",
+    "region": "ap-south-1",
+    "usage_type": "Data Transfer (out)",
+    "usage_quantity": 10000,
+    "unit": "GB",
+    "cost_inr": 500,
+    "desc": "Ecommerce CDN"
+  },
+  {
+    "month": "2025-02",
+    "service": "CloudFront",
+    "resource_id": "cloudfront-e-commerce",
+    "region": "ap-south-1",
+    "usage_type": "Data Transfer (in)",
+    "usage_quantity": 5000,
+    "unit": "GB",
+    "cost_inr": 250,
+    "desc": "Ecommerce CDN"
+  },
+  {
+    "month": "2025-01",
+    "service": "API Gateway",
+    "resource_id": "apigateway-e-commerce",
+    "region": "ap-south-1",
+    "usage_type": "API Gateway",
+    "usage_quantity": 1000,
+    "unit": "hits",
+    "cost_inr": 10000,
+    "desc": "Ecommerce API"
+  },
+  {
+    "month": "2025-02",
+    "service": "API Gateway",
+    "resource_id": "apigateway-e-commerce",
+    "region": "ap-south-1",
+    "usage_type": "API Gateway",
+    "usage_quantity": 2000,
+    "unit": "hits",
+    "cost_inr": 20000,
+    "desc": "Ecommerce API"
+  },
+  {
+    "month": "2025-01",
+    "service": "Route 53",
+    "resource_id": "route53-e-commerce",
+    "region": "ap-south-1",
+    "usage_type": "Route 53",
+    "usage_quantity": 10,
+    "unit": "hosted zones",
+    "cost_inr": 100,
+    "desc": "Ecommerce Route 53"
+  },
+  {
+    "month": "2025-02",
+    "service": "Route 53",
+    "resource_id": "route53-e-commerce",
+    "region": "ap-south-1",
+    "usage_type": "Route 53",
+    "usage_quantity": 15,
+    "unit": "hosted zones",
+    "cost_inr": 150,
+    "desc": "Ecommerce Route 53"
+  },
+  {
+    "month": "2025-01",
+    "service": "IAM",
+    "resource_id": "iam-e-commerce",
+    "region": "ap-south-1",
+    "usage_type": "IAM",
+    "usage_quantity": 50,
+    "unit": "users",
+    "cost_inr": 500,
+    "desc": "Ecommerce IAM"
+  },
+  {
+    "month": "2025-02",
+    "service": "IAM",
+    "resource_id": "iam-e-commerce",
+    "region": "ap-south-1",
+    "usage_type": "IAM",
+    "usage_quantity": 100,
+    "unit": "users",
+    "cost_inr": 1000,
+    "desc": "Ecommerce IAM"
+  }
+]

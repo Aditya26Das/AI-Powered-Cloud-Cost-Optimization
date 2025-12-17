@@ -1,0 +1,27 @@
+Generate a synthetic bill for our customer(with 12 realistic records), which is nothing but a list of JSON objects, where each object represents a record. Include details like month, service, resourse_id, region, usage_type, usage_quantity, unit, cost_inr, desc. For example refer to the bellow bills:-
+
+[
+    {
+    "month": "2025-01",
+    "service": "EC2",
+    "resource_id": "i-ecommerce-web-01",
+    "region": "ap-south-1",
+    "usage_type": "Linux/UNIX (on-demand)",
+    "usage_quantity": 720,
+    "unit": "hours",
+    "cost_inr": 900,
+    "desc": "Ecommerce web server"
+    },
+    {
+    "month": "2025-01",
+    "service": "EC2",
+    "resource_id": "i-ecommerce-api-01",
+    "region": "ap-south-1",
+    "usage_type": "Linux/UNIX (on-demand)",
+    "usage_quantity": 360,
+    "unit": "hours",
+    "cost_inr": 450,
+    "desc": "Ecommerce API server"
+    },
+]
+Please generate JSON only content

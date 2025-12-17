@@ -1,5 +1,5 @@
 From the above user input, extract the following infromation from the text in JSON format only:-
-1. Name of the Application
+1. Name of the Application (May not be given directly by the user. In case it is not given, create a suitable name for the project)
 2. Monthly Budget (in INR per month)
 3. Description of their app
 4. Tech Stack - which is again a JSON containing information like frontend, backend, monitoring, databases, networking, storage, analytics, etc. If not mentioned, leave it empty.
