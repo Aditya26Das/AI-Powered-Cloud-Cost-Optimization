@@ -3,6 +3,20 @@ import json
 from dotenv import load_dotenv
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 
+def create_folder(folder_name):
+    try:
+        current_dir = os.getcwd()
+        folder_path = os.path.join(current_dir,"reports",folder_name)
+
+        if not os.path.exists(folder_path):
+            os.mkdir(folder_path)
+            print(f"Folder '{folder_name}' created successfully.")
+        else:
+            print(f"Folder '{folder_name}' already exists.")
+
+    except OSError as e:
+        print(f"Error creating folder: {e}")
+
 def extract_json(text):
     try:
         start = text.index("{")
@@ -40,6 +54,9 @@ if __name__ == "__main__":
     
     response=model.invoke(messages)
     result_project_profile = extract_json(response.content)
+    create_folder(f"{result_project_profile["name"]}")
     save_json_file("reports/project_profile.json", result_project_profile)
+    messages.append({"role": "assistant", "content": result_project_profile})
+    
     
     
