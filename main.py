@@ -53,9 +53,12 @@ if __name__ == "__main__":
     ]
     
     response=model.invoke(messages)
+    print(response.content)
     result_project_profile = extract_json(response.content)
     create_folder(f"{result_project_profile["name"]}")
-    save_json_file("reports/project_profile.json", result_project_profile)
+    save_json_file(f"reports/{result_project_profile["name"]}/project_profile.json", result_project_profile)
+    
+    
     messages.append({"role": "assistant", "content": result_project_profile})
     
     
