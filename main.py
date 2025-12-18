@@ -47,8 +47,6 @@ if __name__ == "__main__":
     
     llm = HuggingFaceEndpoint(
         repo_id="meta-llama/Meta-Llama-3-8B-Instruct",
-        # repo_id="meta-llama/Llama-3.1-8B-Instruct"
-        # repo_id="moonshotai/Kimi-K2-Instruct",
         max_new_tokens=2048
     ) # type: ignore
     
@@ -80,6 +78,41 @@ if __name__ == "__main__":
     
     result_synthetic_bill = extract_json_list(response.content)
     save_json_file(f"reports/{result_project_profile['name']}/synthetic_bill.json", result_synthetic_bill)
+    
+    # Cost Analysis & Recommendations
+    llm2 = HuggingFaceEndpoint(
+        repo_id="openai/gpt-oss-20b",
+        max_new_tokens=3072,
+        timeout=300
+    ) # type: ignore
+    model2 = ChatHuggingFace(llm=llm2)
+    messages3 = []
+    messages3.append({
+        "role": "system",
+        "content": "You are a cloud cost optimization assistant. Return ONLY valid JSON."
+    })
+    messages3.append({
+        "role": "user",
+        "content": f"Project profile:\n{json.dumps(result_project_profile, indent=2)}"
+    })
+    messages3.append({
+        "role": "user",
+        "content": f"Current cloud bill:\n{json.dumps(result_synthetic_bill, indent=2)}"
+    })
+    with open("cost_analysis_prompt.txt", "r", encoding="utf-8") as f:
+        cost_analysis_prompt = f.read()
+    messages3.append({
+        "role": "user",
+        "content": cost_analysis_prompt
+    })
+    response = model2.invoke(messages3)
+    print(response.content)
+    result_cost_analysis_recommendations = extract_json(response.content)
+    save_json_file(
+        f"reports/{result_project_profile['name']}/cost_analysis_recommendations.json",
+        result_cost_analysis_recommendations
+    )
+
     
     
     

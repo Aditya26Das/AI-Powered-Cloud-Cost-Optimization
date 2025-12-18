@@ -1,0 +1,58 @@
+Given a client’s project profile and current cloud bill, generate a JSON-only cloud cost analysis and optimization report aligned with the customer’s budget and requirements.
+
+The output **must include**:-
+1. Total monthly cost, which must lie within [input_total_monthly_cost − 10,000, input_total_monthly_cost + 10,000]
+2. Cost breakdown by service
+3. Budget and budget variance
+4. Over/under budget status
+5. 6–10 actionable cost-optimization recommendations
+
+**Important Constraints**:-
+1. Return JSON only (no text outside JSON).
+2. Recommendations must be multi-cloud, covering AWS, Azure, GCP, and open-source/free-tier options where applicable.
+3. Do not double-count savings:
+4. If multiple recommendations target the same service, assume they are mutually exclusive.
+5. For savings aggregation, consider only the maximum feasible saving per service.
+6. Total potential savings must never exceed total monthly cost.
+7. Savings percentage must be capped at 100%.
+
+{
+  "project_name": "string",
+  "analysis": {
+    "total_monthly_cost": number,
+    "budget": number,
+    "budget_variance": number,
+    "is_over_budget": boolean,
+    "service_costs": {
+      "service_name": number
+    },
+    "high_cost_services": {
+      "service_name": number
+    }
+  },
+  "recommendations": [
+    {
+      "title": "string",
+      "service": "string",
+      "current_cost": number,
+      "potential_savings": number,
+      "recommendation_type": "optimization | right_sizing | free_tier | open_source | alternative_provider",
+      "description": "string",
+      "implementation_effort": "low | medium | high",
+      "risk_level": "low | medium | high",
+      "steps": ["string"],
+      "cloud_providers": ["AWS | Azure | GCP | Open-source"]
+    }
+  ],
+  "summary": {
+    "total_potential_savings": number,
+    "savings_percentage": number,
+    "recommendations_count": number
+  }
+}
+
+**Implicit Calculation Rules** (must be followed):-
+1. total_monthly_cost = sum(service_costs)
+2. budget_variance = total_monthly_cost − budget
+3. total_potential_savings = sum(max savings per service)
+4. savings_percentage = min((total_potential_savings / total_monthly_cost) × 100, 100)
