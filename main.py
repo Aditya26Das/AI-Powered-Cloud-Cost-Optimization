@@ -1,118 +1,187 @@
 import os
 import json
-from dotenv import load_dotenv
-from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 
-def create_folder(folder_name):
-    try:
-        current_dir = os.getcwd()
-        folder_path = os.path.join(current_dir,"reports",folder_name)
+from project_profile import generate_project_profile
+from synthetic_bill import generate_synthetic_bill
+from cost_analysis import analyse_costs
 
-        if not os.path.exists(folder_path):
-            os.mkdir(folder_path)
-            print(f"Folder '{folder_name}' created successfully.")
-        else:
-            print(f"Folder '{folder_name}' already exists.")
 
-    except OSError as e:
-        print(f"Error creating folder: {e}")
+REPORTS_DIR = "reports"
 
-def extract_json(text):
-    try:
-        start = text.index("{")
-        end = text.rindex("}") + 1
-        return json.loads(text[start:end])
-    except (ValueError, json.JSONDecodeError):
-        raise ValueError("No valid JSON found")
 
-def extract_json_list(text):
-    try:
-        start = text.index("[")
-        end = text.rindex("]") + 1
-        return json.loads(text[start:end])
-    except (ValueError, json.JSONDecodeError):
-        raise ValueError("No valid JSON found")
-
-def save_json_file(file, data):
-  with open(f"{file}", "w", encoding="utf-8") as f:
-    json.dump(data, f, indent=2, ensure_ascii=False)
-
-def read_json_file(file_path):
-    with open(file_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    return data
-
-if __name__ == "__main__":
-    load_dotenv()    
-    
-    llm = HuggingFaceEndpoint(
-        repo_id="meta-llama/Meta-Llama-3-8B-Instruct",
-        max_new_tokens=2048
-    ) # type: ignore
-    
-    model = ChatHuggingFace(llm=llm)
-    
-    
-    # Generate Project Profile
-    with open("project_profile_prompt.txt", "r", encoding="utf-8") as f:
-        project_profile_prompt = f.read()
-    user_query=input("Enter your query: ")
-    messages = [
-        {"role": "user", "content": user_query},
-        {"role": "user", "content": project_profile_prompt}
+def list_project_folders():
+    if not os.path.exists(REPORTS_DIR):
+        return []
+    return [
+        f for f in os.listdir(REPORTS_DIR)
+        if os.path.isdir(os.path.join(REPORTS_DIR, f))
     ]
-    response=model.invoke(messages)
-    print(response.content)
-    result_project_profile = extract_json(response.content)
-    create_folder(f"{result_project_profile["name"]}")
-    save_json_file(f"reports/{result_project_profile["name"]}/project_profile.json", result_project_profile)
 
-    # Generate Synthetic Bill
-    messages2 = []
-    messages2.append({"role": "assistant", "content": json.dumps(result_project_profile)})
-    with open("synthetic_bill_prompt.txt", "r", encoding="utf-8") as f:
-        synthetic_bill_prompt = f.read()
-    messages2.append({"role": "user", "content": f"{synthetic_bill_prompt}"})
-    response=model.invoke(messages2)
-    print(response.content)
-    
-    result_synthetic_bill = extract_json_list(response.content)
-    save_json_file(f"reports/{result_project_profile['name']}/synthetic_bill.json", result_synthetic_bill)
-    
-    # Cost Analysis & Recommendations
-    llm2 = HuggingFaceEndpoint(
-        repo_id="openai/gpt-oss-20b",
-        max_new_tokens=3072,
-        timeout=300
-    ) # type: ignore
-    model2 = ChatHuggingFace(llm=llm2)
-    messages3 = []
-    messages3.append({
-        "role": "system",
-        "content": "You are a cloud cost optimization assistant. Return ONLY valid JSON."
-    })
-    messages3.append({
-        "role": "user",
-        "content": f"Project profile:\n{json.dumps(result_project_profile, indent=2)}"
-    })
-    messages3.append({
-        "role": "user",
-        "content": f"Current cloud bill:\n{json.dumps(result_synthetic_bill, indent=2)}"
-    })
-    with open("cost_analysis_prompt.txt", "r", encoding="utf-8") as f:
-        cost_analysis_prompt = f.read()
-    messages3.append({
-        "role": "user",
-        "content": cost_analysis_prompt
-    })
-    response = model2.invoke(messages3)
-    print(response.content)
-    result_cost_analysis_recommendations = extract_json(response.content)
-    save_json_file(
-        f"reports/{result_project_profile['name']}/cost_analysis_recommendations.json",
-        result_cost_analysis_recommendations
+
+def has_file(project, filename):
+    return os.path.exists(
+        os.path.join(REPORTS_DIR, project, filename)
     )
 
-    
-    
-    
+
+def display_menu():
+    print("\n===== Cloud Cost CLI =====")
+    print("1. Enter new project description")
+    print("2. Run complete cost analysis")
+    print("3. View recommendations")
+    print("0. Exit")
+
+
+def display_recommendations_human_readable(data):
+    print("\n===== Cost Analysis Summary =====\n")
+
+    analysis = data.get("analysis", {})
+    recommendations = data.get("recommendations", [])
+
+    if analysis:
+        print("📊 Overall Analysis")
+        print(f"- Total Monthly Cost: ₹{analysis.get('total_monthly_cost')}")
+        print(f"- Budget: ₹{analysis.get('budget')}")
+        print(f"- Over Budget: {analysis.get('is_over_budget')}")
+        print()
+
+    if not recommendations:
+        print("No recommendations available.")
+        return
+
+    print("💡 Recommendations:\n")
+    for idx, rec in enumerate(recommendations, start=1):
+        print(f"{idx}. {rec.get('title')}")
+        print(f"   Service        : {rec.get('service')}")
+        print(f"   Current Cost   : ₹{rec.get('current_cost')}")
+        print(f"   Potential Save : ₹{rec.get('potential_savings')}")
+        print(f"   Suggestion     : {rec.get('description')}")
+        print("-" * 50)
+
+
+def main():
+    while True:
+        display_menu()
+        choice = input("Select an option: ").strip()
+
+        match choice:
+
+            # 1️⃣ Generate Project Profile
+            case "1":
+                try:
+                    query = input("\nEnter project description: ").strip()
+                    if not query:
+                        print("❌ Description cannot be empty.")
+                        continue
+
+                    generate_project_profile(query)
+                    print("✅ Project profile generated.")
+                except Exception as e:
+                    print(f"❌ Error generating project profile: {e}")
+
+            # 2️⃣ Run Complete Cost Analysis
+            case "2":
+                try:
+                    projects = list_project_folders()
+                    incomplete_projects = [
+                        p for p in projects
+                        if not has_file(p, "cost_analysis_recommendations.json")
+                    ]
+
+                    if not incomplete_projects:
+                        print("✅ No incomplete projects found.")
+                        continue
+
+                    print("\nIncomplete Projects:")
+                    for i, p in enumerate(incomplete_projects, start=1):
+                        print(f"{i}. {p}")
+
+                    try:
+                        idx = int(input("Choose project: ")) - 1
+                        project = incomplete_projects[idx]
+                    except (ValueError, IndexError):
+                        print("❌ Invalid selection.")
+                        continue
+
+                    profile_path = os.path.join(
+                        REPORTS_DIR, project, "project_profile.json"
+                    )
+
+                    if not os.path.exists(profile_path):
+                        print("❌ project_profile.json not found.")
+                        continue
+
+                    with open(profile_path, "r", encoding="utf-8") as f:
+                        project_profile = json.load(f)
+
+
+                    bill_path = os.path.join(
+                        REPORTS_DIR, project, "synthetic_bill.json"
+                    )
+
+                    if os.path.exists(bill_path):
+                        with open(bill_path, "r", encoding="utf-8") as f:
+                            synthetic_bill = json.load(f)
+                        print("ℹ️ Using existing synthetic bill.")
+                    else:
+                        synthetic_bill = generate_synthetic_bill(project_profile)
+                        print("✅ Synthetic bill generated.")
+
+                    analyse_costs(project_profile, synthetic_bill)
+                    print("✅ Cost analysis completed.")
+
+                except Exception as e:
+                    print(f"❌ Error during cost analysis: {e}")
+
+            # 3️⃣ View Recommendations
+            case "3":
+                try:
+                    projects = list_project_folders()
+                    completed_projects = [
+                        p for p in projects
+                        if (
+                            has_file(p, "project_profile.json") and
+                            has_file(p, "synthetic_bill.json") and
+                            has_file(p, "cost_analysis_recommendations.json")
+                        )
+                    ]
+
+                    if not completed_projects:
+                        print("❌ No completed projects found.")
+                        continue
+
+                    print("\nCompleted Projects:")
+                    for i, p in enumerate(completed_projects, start=1):
+                        print(f"{i}. {p}")
+
+                    try:
+                        idx = int(input("Choose project: ")) - 1
+                        project = completed_projects[idx]
+                    except (ValueError, IndexError):
+                        print("❌ Invalid selection.")
+                        continue
+
+                    rec_path = os.path.join(
+                        REPORTS_DIR,
+                        project,
+                        "cost_analysis_recommendations.json"
+                    )
+
+                    with open(rec_path, "r", encoding="utf-8") as f:
+                        data = json.load(f)
+
+                    display_recommendations_human_readable(data)
+                except Exception as e:
+                    print(f"❌ Error displaying recommendations: {e}")
+
+            # 0️⃣ Exit
+            case "0":
+                print("👋 Exiting CLI.")
+                break
+
+            case _:
+                print("❌ Invalid option. Try again.")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,134 @@
+[
+  {
+    "month": "2025-01",
+    "service": "EC2",
+    "resource_id": "i-ecommerce-web-01",
+    "region": "ap-south-1",
+    "usage_type": "Linux/UNIX (on-demand)",
+    "usage_quantity": 720,
+    "unit": "hours",
+    "cost_inr": 900,
+    "desc": "Ecommerce web server"
+  },
+  {
+    "month": "2025-01",
+    "service": "EC2",
+    "resource_id": "i-ecommerce-api-01",
+    "region": "ap-south-1",
+    "usage_type": "Linux/UNIX (on-demand)",
+    "usage_quantity": 360,
+    "unit": "hours",
+    "cost_inr": 450,
+    "desc": "Ecommerce API server"
+  },
+  {
+    "month": "2025-01",
+    "service": "S3",
+    "resource_id": "s3-bucket-ecommerce",
+    "region": "ap-south-1",
+    "usage_type": "Storage (GB-month)",
+    "usage_quantity": 120,
+    "unit": "GB-month",
+    "cost_inr": 3840,
+    "desc": "Ecommerce product images storage"
+  },
+  {
+    "month": "2025-01",
+    "service": "S3",
+    "resource_id": "s3-bucket-ecommerce",
+    "region": "ap-south-1",
+    "usage_type": "Data Transfer Out (GB)",
+    "usage_quantity": 80,
+    "unit": "GB",
+    "cost_inr": 160,
+    "desc": "Ecommerce product images transfer out"
+  },
+  {
+    "month": "2025-01",
+    "service": "RDS",
+    "resource_id": "rds-ecommerce-database",
+    "region": "ap-south-1",
+    "usage_type": "RDS Instance (hours)",
+    "usage_quantity": 8760,
+    "unit": "hours",
+    "cost_inr": 7499.2,
+    "desc": "Ecommerce database instance"
+  },
+  {
+    "month": "2025-01",
+    "service": "RDS",
+    "resource_id": "rds-ecommerce-database",
+    "region": "ap-south-1",
+    "usage_type": "Storage (GB)",
+    "usage_quantity": 50,
+    "unit": "GB",
+    "cost_inr": 1500,
+    "desc": "Ecommerce database storage"
+  },
+  {
+    "month": "2025-01",
+    "service": "CloudFront",
+    "resource_id": "cloudfront-distribution-ecommerce",
+    "region": "Global",
+    "usage_type": "Data Transfer (GB)",
+    "usage_quantity": 100,
+    "unit": "GB",
+    "cost_inr": 0,
+    "desc": "Ecommerce content delivery network"
+  },
+  {
+    "month": "2025-01",
+    "service": "CloudFront",
+    "resource_id": "cloudfront-distribution-ecommerce",
+    "region": "Global",
+    "usage_type": "Requests",
+    "usage_quantity": 50000000,
+    "unit": "Requests",
+    "cost_inr": 15000,
+    "desc": "Ecommerce content delivery network requests"
+  },
+  {
+    "month": "2025-01",
+    "service": "API Gateway",
+    "resource_id": "apigateway-ecommerce",
+    "region": "ap-south-1",
+    "usage_type": "API Requests",
+    "usage_quantity": 10000000,
+    "unit": "Requests",
+    "cost_inr": 10000,
+    "desc": "Ecommerce API gateway requests"
+  },
+  {
+    "month": "2025-01",
+    "service": "Lambda",
+    "resource_id": "lambda-function-ecommerce",
+    "region": "ap-south-1",
+    "usage_type": "Lambda Function Execution (requests)",
+    "usage_quantity": 100000,
+    "unit": "Requests",
+    "cost_inr": 1e-05,
+    "desc": "Ecommerce serverless function execution"
+  },
+  {
+    "month": "2025-01",
+    "service": "Cognito",
+    "resource_id": "cognito-userpool-ecommerce",
+    "region": "ap-south-1",
+    "usage_type": "Cognito User Pool (users)",
+    "usage_quantity": 10000,
+    "unit": "users",
+    "cost_inr": 0.0001,
+    "desc": "Ecommerce user pool"
+  },
+  {
+    "month": "2025-01",
+    "service": "Cognito",
+    "resource_id": "cognito-userpool-ecommerce",
+    "region": "ap-south-1",
+    "usage_type": "Cognito User Pool (invites)",
+    "usage_quantity": 1000,
+    "unit": "invites",
+    "cost_inr": 0.01,
+    "desc": "Ecommerce user pool invitations"
+  }
+]
