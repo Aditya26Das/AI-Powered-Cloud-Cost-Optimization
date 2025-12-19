@@ -39,7 +39,7 @@ def display_recommendations_human_readable(data):
     recommendations = data.get("recommendations", [])
 
     if analysis:
-        print("📊 Overall Analysis")
+        print("\U0001F4CA Overall Analysis")
         print(f"- Total Monthly Cost: ₹{analysis.get('total_monthly_cost')}")
         print(f"- Budget: ₹{analysis.get('budget')}")
         print(f"- Over Budget: {analysis.get('is_over_budget')}")
@@ -49,7 +49,7 @@ def display_recommendations_human_readable(data):
         print("No recommendations available.")
         return
 
-    print("💡 Recommendations:\n")
+    print("\U0001F4A1 Recommendations:\n")
     for idx, rec in enumerate(recommendations, start=1):
         print(f"{idx}. {rec.get('title')}")
         print(f"   Service        : {rec.get('service')}")
@@ -66,20 +66,20 @@ def main():
 
         match choice:
 
-            # 1️⃣ Generate Project Profile
+            # Generate Project Profile
             case "1":
                 try:
                     query = input("\nEnter project description: ").strip()
                     if not query:
-                        print("❌ Description cannot be empty.")
+                        print("\u274C Description cannot be empty.")
                         continue
 
                     generate_project_profile(query)
-                    print("✅ Project profile generated.")
+                    print("\u2705 Project profile generated.")
                 except Exception as e:
-                    print(f"❌ Error generating project profile: {e}")
+                    print(f"\u274C Error generating project profile: {e}")
 
-            # 2️⃣ Run Complete Cost Analysis
+            # Run Complete Cost Analysis
             case "2":
                 try:
                     projects = list_project_folders()
@@ -89,7 +89,7 @@ def main():
                     ]
 
                     if not incomplete_projects:
-                        print("✅ No incomplete projects found.")
+                        print("\u2705 No incomplete projects found.")
                         continue
 
                     print("\nIncomplete Projects:")
@@ -100,7 +100,7 @@ def main():
                         idx = int(input("Choose project: ")) - 1
                         project = incomplete_projects[idx]
                     except (ValueError, IndexError):
-                        print("❌ Invalid selection.")
+                        print("\u274C Invalid selection.")
                         continue
 
                     profile_path = os.path.join(
@@ -108,7 +108,7 @@ def main():
                     )
 
                     if not os.path.exists(profile_path):
-                        print("❌ project_profile.json not found.")
+                        print("\u274C project_profile.json not found.")
                         continue
 
                     with open(profile_path, "r", encoding="utf-8") as f:
@@ -122,18 +122,18 @@ def main():
                     if os.path.exists(bill_path):
                         with open(bill_path, "r", encoding="utf-8") as f:
                             synthetic_bill = json.load(f)
-                        print("ℹ️ Using existing synthetic bill.")
+                        print("\u2139 Using existing synthetic bill.")
                     else:
                         synthetic_bill = generate_synthetic_bill(project_profile)
-                        print("✅ Synthetic bill generated.")
+                        print("\u2705 Synthetic bill generated.")
 
                     analyse_costs(project_profile, synthetic_bill)
-                    print("✅ Cost analysis completed.")
+                    print("\u2705 Cost analysis completed.")
 
                 except Exception as e:
-                    print(f"❌ Error during cost analysis: {e}")
+                    print(f"\u274C Error during cost analysis: {e}")
 
-            # 3️⃣ View Recommendations
+            # View Recommendations
             case "3":
                 try:
                     projects = list_project_folders()
@@ -147,7 +147,7 @@ def main():
                     ]
 
                     if not completed_projects:
-                        print("❌ No completed projects found.")
+                        print("\u274C No completed projects found.")
                         continue
 
                     print("\nCompleted Projects:")
@@ -158,7 +158,7 @@ def main():
                         idx = int(input("Choose project: ")) - 1
                         project = completed_projects[idx]
                     except (ValueError, IndexError):
-                        print("❌ Invalid selection.")
+                        print("\u274C Invalid selection.")
                         continue
 
                     rec_path = os.path.join(
@@ -172,15 +172,15 @@ def main():
 
                     display_recommendations_human_readable(data)
                 except Exception as e:
-                    print(f"❌ Error displaying recommendations: {e}")
+                    print(f"\u274C Error displaying recommendations: {e}")
 
-            # 0️⃣ Exit
+            # Exit
             case "0":
-                print("👋 Exiting CLI.")
+                print("\U0001F44B Exiting CLI.")
                 break
 
             case _:
-                print("❌ Invalid option. Try again.")
+                print("\u274C Invalid option. Try again.")
 
 
 if __name__ == "__main__":

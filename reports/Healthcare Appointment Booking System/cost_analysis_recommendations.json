@@ -1,0 +1,154 @@
+{
+  "project_name": "Healthcare Appointment Booking System",
+  "analysis": {
+    "total_monthly_cost": 132250,
+    "budget": 40000,
+    "budget_variance": -92050,
+    "is_over_budget": true,
+    "service_costs": {
+      "RDS": 2700,
+      "S3": 775,
+      "EC2": 1152,
+      "API Gateway": 55000,
+      "CloudWatch": 437.5,
+      "CloudFormation": 250
+    },
+    "high_cost_services": {
+      "API Gateway": 55000
+    }
+  },
+  "recommendations": [
+    {
+      "title": "Migrate API Gateway to Load Balancer",
+      "service": "API Gateway",
+      "current_cost": 55000,
+      "potential_savings": 35000,
+      "recommendation_type": "optimization",
+      "description": "Load Balancer can handle API Gateway's traffic more efficiently.",
+      "implementation_effort": "high",
+      "risk_level": "medium",
+      "steps": [
+        "Create a new Load Balancer instance",
+        "Redirect API Gateway traffic to Load Balancer",
+        "Update Application to use Load Balancer"
+      ],
+      "cloud_providers": [
+        "AWS"
+      ]
+    },
+    {
+      "title": "Use S3 Standard-IA for Less Frequent Access Data",
+      "service": "S3",
+      "current_cost": 775,
+      "potential_savings": 325,
+      "recommendation_type": "optimization",
+      "description": "S3 Standard-IA can offer cheaper storage for less frequently accessed data.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Identify less frequently accessed data in S3",
+        "Migrate to S3 Standard-IA",
+        "Configure Lifecycle Rules"
+      ],
+      "cloud_providers": [
+        "AWS"
+      ]
+    },
+    {
+      "title": "Use AWS Free Tier for Testing and Dev Environment",
+      "service": "EC2",
+      "current_cost": 1152,
+      "potential_savings": 864,
+      "recommendation_type": "free_tier",
+      "description": "Use AWS Free Tier for Testing and Dev Environment to save costs.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Identify Testing and Dev Environment use cases",
+        "Migrate to AWS Free Tier",
+        "Configure Auto Scaling"
+      ],
+      "cloud_providers": [
+        "AWS"
+      ]
+    },
+    {
+      "title": "Use Azure File Storage for Cross-Region Data Replication",
+      "service": "S3",
+      "current_cost": 775,
+      "potential_savings": 0,
+      "recommendation_type": "alternative_provider",
+      "description": "Azure File Storage offers cross-region data replication capabilities.",
+      "implementation_effort": "medium",
+      "risk_level": "medium",
+      "steps": [
+        "Evaluate Azure File Storage for data replication",
+        "Migrate data to Azure File Storage",
+        "Configure Azure File Storage"
+      ],
+      "cloud_providers": [
+        "Azure"
+      ]
+    },
+    {
+      "title": "Implement Automated Backup and Disaster Recovery",
+      "service": "EC2",
+      "current_cost": 1152,
+      "potential_savings": 0,
+      "recommendation_type": "free_tier",
+      "description": "Implement Automated Backup and Disaster Recovery using free tools.",
+      "implementation_effort": "high",
+      "risk_level": "high",
+      "steps": [
+        "Evaluate backup and disaster recovery options",
+        "Implement Automated Backup",
+        "Configure Disaster Recovery"
+      ],
+      "cloud_providers": [
+        "GCP",
+        "Open-source"
+      ]
+    },
+    {
+      "title": "Use Open-Source Monitoring Tools",
+      "service": "CloudWatch",
+      "current_cost": 437.5,
+      "potential_savings": 437.5,
+      "recommendation_type": "open_source",
+      "description": "Use open-source monitoring tools to save costs.",
+      "implementation_effort": "medium",
+      "risk_level": "medium",
+      "steps": [
+        "Evaluate open-source monitoring tools",
+        "Migrate to open-source monitoring tools",
+        "Configure open-source monitoring tools"
+      ],
+      "cloud_providers": [
+        "Open-source"
+      ]
+    },
+    {
+      "title": "Use AWS CloudFormation to Optimize Resource Costs",
+      "service": "CloudFormation",
+      "current_cost": 250,
+      "potential_savings": 0,
+      "recommendation_type": "optimization",
+      "description": "Use AWS CloudFormation to optimize resource costs.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Evaluate AWS CloudFormation",
+        "Migrate to AWS CloudFormation",
+        "Configure AWS CloudFormation"
+      ],
+      "cloud_providers": [
+        "AWS"
+      ]
+    }
+  ],
+  "summary": {
+    "total_potential_savings": 51725,
+    "savings_percentage": 39.0,
+    "recommendations_count": 8
+  }
+}
