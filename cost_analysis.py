@@ -1,9 +1,10 @@
-# cost_analysis.py
 import json
+from dotenv import load_dotenv
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from utils import extract_json, save_json_file
 
 def analyse_costs(project_profile: dict, synthetic_bill: list):
+    load_dotenv()
     llm = HuggingFaceEndpoint(
         repo_id="meta-llama/Meta-Llama-3-8B-Instruct",
         max_new_tokens=2048,

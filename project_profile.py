@@ -1,4 +1,3 @@
-# project_profile.py
 import json
 from dotenv import load_dotenv
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint

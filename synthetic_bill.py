@@ -1,9 +1,10 @@
-# synthetic_bill.py
 import json
+from dotenv import load_dotenv
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from utils import extract_json_list, save_json_file
 
 def generate_synthetic_bill(project_profile: dict):
+    load_dotenv()
     llm = HuggingFaceEndpoint(
         repo_id="meta-llama/Meta-Llama-3-8B-Instruct",
         max_new_tokens=2048

@@ -1,6 +1,6 @@
 import os
 import json
-
+from dotenv import load_dotenv
 from project_profile import generate_project_profile
 from synthetic_bill import generate_synthetic_bill
 from cost_analysis import analyse_costs
@@ -60,6 +60,7 @@ def display_recommendations_human_readable(data):
 
 
 def main():
+    load_dotenv()
     while True:
         display_menu()
         choice = input("Select an option: ").strip()
