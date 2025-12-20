@@ -10,11 +10,12 @@ The output **must include**:-
 **Important Constraints**:-
 1. Return JSON only (no text outside JSON).
 2. Recommendations must be multi-cloud, covering AWS, Azure, GCP, and open-source/free-tier options where applicable.
-3. Do not double-count savings:
+3. Do not double-count savings.
 4. If multiple recommendations target the same service, assume they are mutually exclusive.
 5. For savings aggregation, consider only the maximum feasible saving per service.
 6. Total potential savings must never exceed total monthly cost.
 7. Savings percentage must be capped at 100%.
+8. A given service can only allow only one active optimization per service.
 
 {
   "project_name": "string",
@@ -52,7 +53,6 @@ The output **must include**:-
 }
 
 **Implicit Calculation Rules** (must be followed):-
-1. total_monthly_cost = sum(service_costs)
-2. budget_variance = total_monthly_cost − budget
-3. total_potential_savings = sum(max savings per service)
-4. savings_percentage = min((total_potential_savings / total_monthly_cost) × 100, 100)
+1. total_potential_savings = sum(max savings per service)
+2. savings_percentage = min((total_potential_savings / total_monthly_cost) × 100, 100)
+3. logic for over budget : if total_monthly_cost > budget then is_over_budget = true else false

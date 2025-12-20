@@ -1,0 +1,123 @@
+[
+  {
+    "month": "2023-03",
+    "service": "Compute Small VM",
+    "resource_id": "compute-small-vm-01",
+    "region": "ap-south-1",
+    "usage_type": "Compute per VM-month",
+    "usage_quantity": 1,
+    "unit": "10000",
+    "cost_inr": 4000,
+    "desc": "Small compute instance"
+  },
+  {
+    "month": "2023-03",
+    "service": "Compute Medium VM",
+    "resource_id": "compute-medium-vm-02",
+    "region": "ap-south-1",
+    "usage_type": "Compute per VM-month",
+    "usage_quantity": 2,
+    "unit": "10000",
+    "cost_inr": 20000,
+    "desc": "Medium compute instance"
+  },
+  {
+    "month": "2023-03",
+    "service": "Managed SQL DB (Small)",
+    "resource_id": "db-small-01",
+    "region": "ap-south-1",
+    "usage_type": "Database per instance-month",
+    "usage_quantity": 3,
+    "unit": "1",
+    "cost_inr": 24600,
+    "desc": "Small database instance"
+  },
+  {
+    "month": "2023-03",
+    "service": "Managed SQL DB (Medium)",
+    "resource_id": "db-medium-02",
+    "region": "ap-south-1",
+    "usage_type": "Database per instance-month",
+    "usage_quantity": 1,
+    "unit": "1",
+    "cost_inr": 8200,
+    "desc": "Medium database instance"
+  },
+  {
+    "month": "2023-03",
+    "service": "Object Storage Standard Storage",
+    "resource_id": "obj-store-standard-01",
+    "region": "ap-south-1",
+    "usage_type": "Storage per 100 GB",
+    "usage_quantity": 5,
+    "unit": "100",
+    "cost_inr": 1100,
+    "desc": "Standard object storage"
+  },
+  {
+    "month": "2023-03",
+    "service": "Object Storage Infrequent Storage",
+    "resource_id": "obj-store-infrequent-02",
+    "region": "ap-south-1",
+    "usage_type": "Storage per 100 GB",
+    "usage_quantity": 2,
+    "unit": "100",
+    "cost_inr": 280,
+    "desc": "Infrequent object storage"
+  },
+  {
+    "month": "2023-03",
+    "service": "Block Storage HDD",
+    "resource_id": "block-store-hdd-01",
+    "region": "ap-south-1",
+    "usage_type": "Storage per 100 GB",
+    "usage_quantity": 4,
+    "unit": "100",
+    "cost_inr": 1740,
+    "desc": "HDD block storage"
+  },
+  {
+    "month": "2023-03",
+    "service": "Load Balancer",
+    "resource_id": "load-balancer-01",
+    "region": "ap-south-1",
+    "usage_type": "Networking per month",
+    "usage_quantity": 1,
+    "unit": "1",
+    "cost_inr": 3500,
+    "desc": "Load balancer"
+  },
+  {
+    "month": "2023-03",
+    "service": "Load Balancer",
+    "resource_id": "load-balancer-02",
+    "region": "ap-south-1",
+    "usage_type": "Networking per month",
+    "usage_quantity": 1,
+    "unit": "1",
+    "cost_inr": 3500,
+    "desc": "Load balancer"
+  },
+  {
+    "month": "2023-03",
+    "service": "Monitoring & Logs",
+    "resource_id": "monitoring-logs-01",
+    "region": "ap-south-1",
+    "usage_type": "Monitoring per month",
+    "usage_quantity": 1,
+    "unit": "1",
+    "cost_inr": 1200,
+    "desc": "Basic monitoring"
+  },
+  {
+    "month": "2023-03",
+    "service": "Monitoring & Logs",
+    "resource_id": "monitoring-logs-02",
+    "region": "ap-south-1",
+    "usage_type": "Monitoring per month",
+    "usage_quantity": 1,
+    "unit": "1",
+    "cost_inr": 1200,
+    "desc": "Basic monitoring"
+  }
+]

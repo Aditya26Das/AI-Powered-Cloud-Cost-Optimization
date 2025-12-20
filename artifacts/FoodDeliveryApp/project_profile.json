@@ -1,12 +1,12 @@
 {
-  "name": "Food Delivery App",
+  "name": "FoodDeliveryApp",
   "budget_inr_per_month": 50000,
-  "description": "Building a food delivery app for 10,000 users per month.",
+  "description": "Food delivery app for 10,000 users per month",
   "tech_stack": {
     "frontend": "",
     "backend": "Node.js",
     "database": "PostgreSQL",
-    "storing": "object storage for images",
+    "storage": "object storage",
     "networking": "",
     "monitoring": "monitoring",
     "analytics": "basic analytics"
