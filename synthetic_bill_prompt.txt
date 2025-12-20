@@ -1,5 +1,4 @@
-Generate a synthetic bill for our customer(with 12 realistic records), which is nothing but a list of JSON objects, where each object represents a record. Include details like month, service, resourse_id, region, usage_type, usage_quantity, unit, cost_inr, desc. For example refer to the bellow bills:-
-
+Generate a synthetic bill for our customer(with 12 realistic records), which is nothing but a list of JSON objects, where each object represents a record. Include details like month, service, resourse_id, region, usage_type, usage_quantity(a number), unit (mentioned in the excel sheet), cost_inr(a number), desc. For example refer to the bellow bills:-
 [
     {
     "month": "2025-01",
@@ -7,9 +6,9 @@ Generate a synthetic bill for our customer(with 12 realistic records), which is 
     "resource_id": "i-ecommerce-web-01",
     "region": "ap-south-1",
     "usage_type": "Linux/UNIX (on-demand)",
-    "usage_quantity": 720,
-    "unit": "hours",
-    "cost_inr": 900,
+    "usage_quantity": ,
+    "unit": "",
+    "cost_inr": ,
     "desc": "Ecommerce web server"
     },
     {
@@ -18,9 +17,9 @@ Generate a synthetic bill for our customer(with 12 realistic records), which is 
     "resource_id": "i-ecommerce-api-01",
     "region": "ap-south-1",
     "usage_type": "Linux/UNIX (on-demand)",
-    "usage_quantity": 360,
-    "unit": "hours",
-    "cost_inr": 450,
+    "usage_quantity": ,
+    "unit": "",
+    "cost_inr": ,
     "desc": "Ecommerce API server"
     },
 ]

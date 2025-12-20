@@ -1,5 +1,6 @@
 import os
 import json
+from langchain_community.document_loaders import UnstructuredExcelLoader
 
 def create_folder(folder_name):
     folder_path = os.path.join(os.getcwd(), "reports", folder_name)
@@ -24,4 +25,7 @@ def read_json_file(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
     
-
+def load_excel_data(file_path="cloud_pricing_reference_synthetic.xlsx"):
+    loader = UnstructuredExcelLoader(os.path.join(os.getcwd(), file_path), mode="elements")
+    docs = loader.load()
+    return docs[0].page_content

@@ -1,0 +1,175 @@
+{
+  "project_name": "Food Delivery App",
+  "analysis": {
+    "total_monthly_cost": 50400,
+    "budget": 50000,
+    "budget_variance": 400,
+    "is_over_budget": false,
+    "service_costs": {
+      "Compute": 18000,
+      "Object Storage": 6300,
+      "Load Balancer": 3500,
+      "Monitoring & Logs": 1200,
+      "Managed SQL DB": 16400,
+      "Backup Storage": 1050,
+      "Queue Service": 1100,
+      "Event Bus": 1300
+    },
+    "high_cost_services": {
+      "Managed SQL DB": 16400
+    }
+  },
+  "recommendations": [
+    {
+      "title": "Right-size Compute instance",
+      "service": "Compute",
+      "current_cost": 18000,
+      "potential_savings": 8000,
+      "recommendation_type": "right_sizing",
+      "description": "Downgrade Compute instance from Medium to Small to save 44.44%",
+      "implementation_effort": "medium",
+      "risk_level": "medium",
+      "steps": [
+        "Identify underutilized instances",
+        "Downgrade instance size"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Switch to open-source database",
+      "service": "Managed SQL DB",
+      "current_cost": 16400,
+      "potential_savings": 8200,
+      "recommendation_type": "open_source",
+      "description": "Switch to open-source database like PostgreSQL to save 50%",
+      "implementation_effort": "high",
+      "risk_level": "high",
+      "steps": [
+        "Identify compatible open-source database",
+        "Switch to open-source database"
+      ],
+      "cloud_providers": [
+        "Open-source"
+      ]
+    },
+    {
+      "title": "Migrate Object Storage to AWS S3",
+      "service": "Object Storage",
+      "current_cost": 6300,
+      "potential_savings": 3150,
+      "recommendation_type": "alternative_provider",
+      "description": "Migrate Object Storage to AWS S3 to save 50%",
+      "implementation_effort": "high",
+      "risk_level": "high",
+      "steps": [
+        "Identify compatible AWS S3 bucket",
+        "Migrate data to AWS S3"
+      ],
+      "cloud_providers": [
+        "AWS"
+      ]
+    },
+    {
+      "title": "Switch to free-tier Load Balancer",
+      "service": "Load Balancer",
+      "current_cost": 3500,
+      "potential_savings": 3500,
+      "recommendation_type": "free_tier",
+      "description": "Switch to free-tier Load Balancer to save 100%",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Identify compatible free-tier Load Balancer",
+        "Switch to free-tier Load Balancer"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Downgrade Monitoring & Logs to Basic Plan",
+      "service": "Monitoring & Logs",
+      "current_cost": 1200,
+      "potential_savings": 600,
+      "recommendation_type": "optimization",
+      "description": "Downgrade Monitoring & Logs to Basic Plan to save 50%",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Identify compatible Basic Plan",
+        "Downgrade to Basic Plan"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Switch to AWS Cost Explorer",
+      "service": "Event Bus",
+      "current_cost": 1300,
+      "potential_savings": 0,
+      "recommendation_type": "optimization",
+      "description": "Switch to AWS Cost Explorer to save 0%",
+      "implementation_effort": "medium",
+      "risk_level": "medium",
+      "steps": [
+        "Identify compatible AWS Cost Explorer",
+        "Switch to AWS Cost Explorer"
+      ],
+      "cloud_providers": [
+        "AWS"
+      ]
+    },
+    {
+      "title": "Right-size Queue Service instance",
+      "service": "Queue Service",
+      "current_cost": 1100,
+      "potential_savings": 550,
+      "recommendation_type": "right_sizing",
+      "description": "Downgrade Queue Service instance from Standard to Basic to save 50%",
+      "implementation_effort": "medium",
+      "risk_level": "medium",
+      "steps": [
+        "Identify underutilized instances",
+        "Downgrade instance size"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Switch to free-tier Event Bus",
+      "service": "Event Bus",
+      "current_cost": 1300,
+      "potential_savings": 1300,
+      "recommendation_type": "free_tier",
+      "description": "Switch to free-tier Event Bus to save 100%",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Identify compatible free-tier Event Bus",
+        "Switch to free-tier Event Bus"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    }
+  ],
+  "summary": {
+    "total_potential_savings": 29400,
+    "savings_percentage": 58.33,
+    "recommendations_count": 8
+  }
+}

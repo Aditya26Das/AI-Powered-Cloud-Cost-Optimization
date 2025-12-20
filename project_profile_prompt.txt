@@ -2,7 +2,7 @@ From the above user input, extract the following infromation from the text in JS
 1. Name of the Application (May not be given directly by the user. In case it is not given, create a suitable name for the project)
 2. Monthly Budget (in INR per month)
 3. Description of their app
-4. Tech Stack - which is again a JSON containing information like frontend, backend, monitoring, databases, networking, storage, analytics, etc. If not mentioned, leave it empty.
+4. Tech Stack - which is again a JSON containing information like frontend, backend, monitoring, databases, networking, storage, analytics, etc., and each one of them is a string. If not mentioned, leave it empty.
 5. Non-functional Requirements - which is a list of strings (Keep it empty if not mentioned in the user query)
 
 For example, we have the below output JSON:-
@@ -10,6 +10,14 @@ For example, we have the below output JSON:-
   "name": "",
   "budget_inr_per_month":,
   "description": "",
-  "tech_stack": {},
+  "tech_stack": {
+    frontend: "",
+    backend: "",
+    database: "",
+    storing: "",
+    networking: "",
+    monitoring: "",
+    analytics: "",
+  },
   "non_functional_requirements": []
 }

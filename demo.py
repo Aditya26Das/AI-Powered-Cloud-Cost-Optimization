@@ -2,6 +2,7 @@ import os
 import json
 from dotenv import load_dotenv
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
+from langchain_community.document_loaders import UnstructuredExcelLoader
 
 def create_folder(folder_name):
     try:
@@ -42,9 +43,7 @@ def read_json_file(file_path):
         data = json.load(f)
     return data
 
-if __name__ == "__main__":
-    load_dotenv()    
-    
+def main():
     llm = HuggingFaceEndpoint(
         repo_id="meta-llama/Meta-Llama-3-8B-Instruct",
         max_new_tokens=2048
@@ -112,6 +111,21 @@ if __name__ == "__main__":
         f"reports/{result_project_profile['name']}/cost_analysis_recommendations.json",
         result_cost_analysis_recommendations
     )
+
+if __name__ == "__main__":
+    load_dotenv()
+    # loader = UnstructuredExcelLoader(os.path.join(os.getcwd(),"cloud_pricing_reference_synthetic.xlsx"), mode="elements")
+    # docs = loader.load()
+    llm = HuggingFaceEndpoint(
+        repo_id="meta-llama/Meta-Llama-3-8B-Instruct",
+        max_new_tokens=2048,
+        timeout=300
+    ) # type: ignore
+    model = ChatHuggingFace(llm=llm)
+    response = model.invoke([
+        {"role": "user", "content": "What is 12 * 3000 ?"}
+    ])
+    print(response.content)
 
     
     

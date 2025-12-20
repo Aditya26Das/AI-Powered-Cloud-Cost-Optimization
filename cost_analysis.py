@@ -7,6 +7,7 @@ def analyse_costs(project_profile: dict, synthetic_bill: list):
     load_dotenv()
     llm = HuggingFaceEndpoint(
         repo_id="meta-llama/Meta-Llama-3-8B-Instruct",
+        #repo_id="nvidia/AceMath-7B-Instruct",
         max_new_tokens=2048,
         timeout=300
     ) # type: ignore
