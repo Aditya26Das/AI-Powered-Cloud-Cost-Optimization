@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ project_profile.name }} – Project Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1, h2 { color: #333; }
+        .section { margin-bottom: 30px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background: #f4f4f4; }
+        .good { color: green; font-weight: bold; }
+        .bad { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h1>{{ project_profile.name }}</h1>
+<p>{{ project_profile.description }}</p>
+
+<div class="section">
+    <h2>Budget Overview</h2>
+    <p>Monthly Budget: ₹{{ cost.analysis.budget }}</p>
+    <p>Total Cost: ₹{{ cost.analysis.total_monthly_cost }}</p>
+    <p>
+        Status:
+        {% if cost.analysis.is_over_budget %}
+            <span class="bad">Over Budget</span>
+        {% else %}
+            <span class="good">Within Budget</span>
+        {% endif %}
+    </p>
+</div>
+
+<div class="section">
+    <h2>Service Cost Breakdown</h2>
+    <table>
+        <tr>
+            <th>Service</th>
+            <th>Monthly Cost (₹)</th>
+        </tr>
+        {% for service, amount in cost.analysis.service_costs.items() %}
+        <tr>
+            <td>{{ service }}</td>
+            <td>{{ amount }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div class="section">
+    <h2>Optimization Recommendations</h2>
+    <ul>
+        {% for r in cost.recommendations %}
+        <li>
+            <strong>{{ r.title }}</strong><br>
+            Service: {{ r.service }} |
+            Current: ₹{{ r.current_cost }} |
+            Savings: ₹{{ r.potential_savings }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>

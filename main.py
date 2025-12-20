@@ -3,6 +3,7 @@ import sys
 import time
 import json
 from dotenv import load_dotenv
+from project_report import generate_project_report
 from project_profile import generate_project_profile
 from synthetic_bill import generate_synthetic_bill
 from cost_analysis import analyse_costs
@@ -37,6 +38,7 @@ def display_menu():
     print("1. Enter new project description")
     print("2. Run complete cost analysis")
     print("3. View recommendations")
+    print("4. Extract HTML Report")
     print("0. Exit")
 
 def display_recommendations_human_readable(data):
@@ -219,6 +221,37 @@ def main():
                 except Exception as e:
                     print(f"\u274C Error displaying recommendations: {e}")
 
+            # Extract HTML Report
+            case "4":
+                try:
+                    projects = list_project_folders()
+                    completed_projects = [
+                        p for p in projects if (
+                            has_file(p, "cost_analysis_recommendations.json") and
+                            has_file(p, "project_profile.json") and
+                            has_file(p, "synthetic_bill.json")
+                        )
+                    ]
+                    
+                    if not completed_projects:
+                        print("\u274C No completed projects found.")
+                        continue
+                    
+                    print("\nCompleted Projects:")
+                    for i, p in enumerate(completed_projects, start=1):
+                        print(f"{i}. {p}")
+                    
+                    try:
+                        idx = int(input("Choose project: ")) - 1
+                        project = completed_projects[idx]
+                    except (ValueError, IndexError):
+                        print("\u274C Invalid selection.")
+                        continue
+                    
+                    output_path = generate_project_report(project)
+                    print(f"\u2705 HTML report generated at: {output_path}")
+                except Exception as e:
+                    print(f"\u274C Error extracting HTML report: {e}")
             # Exit
             case "0":
                 print("\U0001F44B Exiting CLI.")
