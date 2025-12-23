@@ -1,0 +1,17 @@
+{
+  "name": "Ride-Sharing MVP",
+  "budget_inr_per_month": 60000,
+  "description": "Building a ride-sharing MVP for 2,000 daily active users with low latency, scalability, and real-time reliability",
+  "tech_stack": {
+    "backend": "Java Spring Boot",
+    "database": "PostgreSQL",
+    "real-time_location_tracking": "",
+    "notification_service": "",
+    "monitoring_tools": ""
+  },
+  "non_functional_requirements": [
+    "low latency",
+    "scalability",
+    "real-time reliability"
+  ]
+}

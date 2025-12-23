@@ -1,0 +1,165 @@
+{
+  "project_name": "Ride-Sharing MVP",
+  "analysis": {
+    "total_monthly_cost": 159220,
+    "budget": 60000,
+    "budget_variance": 99220,
+    "is_over_budget": true,
+    "service_costs": {
+      "Compute Large VM": 105000,
+      "Managed SQL DB (Small)": 8200,
+      "Object Storage": 7920,
+      "Load Balancer": 14000,
+      "API Gateway": 12400,
+      "Compute Small VM": 11700
+    },
+    "high_cost_services": {
+      "Compute Large VM": 105000,
+      "Load Balancer": 14000,
+      "API Gateway": 12400
+    }
+  },
+  "recommendations": [
+    {
+      "title": "Optimize Compute Large VM to use Reserved Instances",
+      "service": "Compute Large VM",
+      "current_cost": 21000,
+      "potential_savings": 10500,
+      "recommendation_type": "optimization",
+      "description": "Switch to reserved instances to save 50% on Compute Large VM.",
+      "implementation_effort": "medium",
+      "risk_level": "medium",
+      "steps": [
+        "Identify instances to reserve",
+        "Create a reserved instance",
+        "Update the instance configuration"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Use Open-source Load Balancer",
+      "service": "Load Balancer",
+      "current_cost": 3500,
+      "potential_savings": 3500,
+      "recommendation_type": "open_source",
+      "description": "Use HAProxy as an open-source load balancer to save 100% on Load Balancer.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Install HAProxy",
+        "Configure HAProxy",
+        "Test the setup"
+      ],
+      "cloud_providers": [
+        "Open-source"
+      ]
+    },
+    {
+      "title": "Downsize API Gateway to use a smaller instance",
+      "service": "API Gateway",
+      "current_cost": 6200,
+      "potential_savings": 6200,
+      "recommendation_type": "right_sizing",
+      "description": "Downsize the API Gateway instance to save 100% on API Gateway.",
+      "implementation_effort": "medium",
+      "risk_level": "medium",
+      "steps": [
+        "Identify the instance type to downsize",
+        "Update the instance configuration",
+        "Test the setup"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Use Azure or GCP for Managed SQL DB (Small)",
+      "service": "Managed SQL DB (Small)",
+      "current_cost": 8200,
+      "potential_savings": 8200,
+      "recommendation_type": "alternative_provider",
+      "description": "Use Azure or GCP for Managed SQL DB (Small) to save 100% on Managed SQL DB (Small).",
+      "implementation_effort": "high",
+      "risk_level": "high",
+      "steps": [
+        "Create a database on Azure or GCP",
+        "Update the database connection",
+        "Test the setup"
+      ],
+      "cloud_providers": [
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Optimize Object Storage",
+      "service": "Object Storage",
+      "current_cost": 1320,
+      "potential_savings": 1320,
+      "recommendation_type": "optimization",
+      "description": "Optimize Object Storage by using a smaller bucket or reducing storage allocation to save 100% on Object Storage.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Identify the bucket to optimize",
+        "Update the storage allocation",
+        "Test the setup"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Open-source"
+      ]
+    },
+    {
+      "title": "Use Compute Small VM for Compute Large VM",
+      "service": "Compute Large VM",
+      "current_cost": 21000,
+      "potential_savings": 10500,
+      "recommendation_type": "right_sizing",
+      "description": "Use Compute Small VM for Compute Large VM to save 50% on Compute Large VM.",
+      "implementation_effort": "medium",
+      "risk_level": "medium",
+      "steps": [
+        "Identify instances to downsize",
+        "Update the instance configuration",
+        "Test the setup"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Use Open-source Monitoring",
+      "service": "Monitoring",
+      "current_cost": 1300,
+      "potential_savings": 1300,
+      "recommendation_type": "open_source",
+      "description": "Use Prometheus and Grafana as open-source monitoring tools to save 100% on Monitoring.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Install Prometheus and Grafana",
+        "Configure the monitoring setup",
+        "Test the setup"
+      ],
+      "cloud_providers": [
+        "Open-source"
+      ]
+    }
+  ],
+  "summary": {
+    "total_potential_savings": 65420,
+    "savings_percentage": 41.04,
+    "recommendations_count": 7
+  }
+}

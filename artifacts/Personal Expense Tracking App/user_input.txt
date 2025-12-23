@@ -1,0 +1,4 @@
+We are building a personal expense tracking app for 12,000 monthly users.
+Budget: ₹20,000 per month.
+Tech stack: Node.js backend, SQLite/PostgreSQL database, cloud storage for backups, basic analytics, and error monitoring.
+Non-functional requirements: data accuracy, cost efficiency, availability.

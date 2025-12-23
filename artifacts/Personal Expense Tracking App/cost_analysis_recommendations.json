@@ -1,0 +1,170 @@
+{
+  "project_name": "Personal Expense Tracking App",
+  "analysis": {
+    "total_monthly_cost": 362350,
+    "budget": 20000,
+    "budget_variance": 342350,
+    "is_over_budget": true,
+    "service_costs": {
+      "Compute Large VM": 39000,
+      "Object Storage Infrequent Storage": 3000,
+      "Managed SQL DB (Medium)": 240000,
+      "Load Balancer": 3500,
+      "Block Storage SSD": 8550,
+      "Database (Small)": 34000,
+      "Event Bus": 1300,
+      "Provisioned IOPS Add-on": 12800,
+      "API Gateway": 6200,
+      "In-memory Cache": 6200,
+      "Reserved Instance (Medium)": 7800
+    },
+    "high_cost_services": {
+      "Managed SQL DB (Medium)": 240000,
+      "Database (Small)": 34000,
+      "Provisioned IOPS Add-on": 12800,
+      "API Gateway": 6200,
+      "In-memory Cache": 6200
+    }
+  },
+  "recommendations": [
+    {
+      "title": "Migrate to Azure PostgreSQL for SQL database",
+      "service": "Managed SQL DB (Medium)",
+      "current_cost": 240000,
+      "potential_savings": 90000,
+      "recommendation_type": "alternative_provider",
+      "description": "Consider using Azure PostgreSQL for your SQL database. It's cost-effective and offers similar features.",
+      "implementation_effort": "medium",
+      "risk_level": "low",
+      "steps": [
+        "Assess database requirements",
+        "Plan migration",
+        "Migrate database"
+      ],
+      "cloud_providers": [
+        "Azure"
+      ]
+    },
+    {
+      "title": "Right-size Compute Large VM",
+      "service": "Compute Large VM",
+      "current_cost": 39000,
+      "potential_savings": 19500,
+      "recommendation_type": "right_sizing",
+      "description": "Consider downsizing your Compute Large VM to a smaller instance type. This will reduce costs without affecting performance.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Assess current usage",
+        "Downsize to smaller instance type",
+        "Reconfigure application"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Use Open Source Caching solution",
+      "service": "In-memory Cache",
+      "current_cost": 6200,
+      "potential_savings": 6200,
+      "recommendation_type": "open_source",
+      "description": "Consider using an open-source caching solution like Redis or Memcached. This will eliminate costs associated with In-memory Cache.",
+      "implementation_effort": "medium",
+      "risk_level": "low",
+      "steps": [
+        "Assess caching requirements",
+        "Implement open-source solution",
+        "Configure application"
+      ],
+      "cloud_providers": [
+        "Open-source"
+      ]
+    },
+    {
+      "title": "Downsize Database (Small)",
+      "service": "Database (Small)",
+      "current_cost": 34000,
+      "potential_savings": 17000,
+      "recommendation_type": "right_sizing",
+      "description": "Consider downsizing your Database (Small) to a smaller instance type. This will reduce costs without affecting performance.",
+      "implementation_effort": "medium",
+      "risk_level": "low",
+      "steps": [
+        "Assess current usage",
+        "Downsize to smaller instance type",
+        "Reconfigure application"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Use Azure Storage for Infrequent Storage",
+      "service": "Object Storage Infrequent Storage",
+      "current_cost": 3000,
+      "potential_savings": 3000,
+      "recommendation_type": "alternative_provider",
+      "description": "Consider using Azure Storage for your Infrequent Storage needs. It's cost-effective and offers similar features.",
+      "implementation_effort": "medium",
+      "risk_level": "low",
+      "steps": [
+        "Assess storage requirements",
+        "Plan migration",
+        "Migrate storage"
+      ],
+      "cloud_providers": [
+        "Azure"
+      ]
+    },
+    {
+      "title": "Simplify Provisioned IOPS Add-on configuration",
+      "service": "Provisioned IOPS Add-on",
+      "current_cost": 12800,
+      "potential_savings": 6400,
+      "recommendation_type": "optimization",
+      "description": "Consider simplifying your Provisioned IOPS Add-on configuration. This will reduce costs without affecting performance.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Assess current configuration",
+        "Simplify configuration",
+        "Reconfigure application"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Optimize API Gateway configuration",
+      "service": "API Gateway",
+      "current_cost": 6200,
+      "potential_savings": 3120,
+      "recommendation_type": "optimization",
+      "description": "Consider optimizing your API Gateway configuration. This will reduce costs without affecting performance.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Assess current configuration",
+        "Optimize configuration",
+        "Reconfigure application"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    }
+  ],
+  "summary": {
+    "total_potential_savings": 197190,
+    "savings_percentage": 54.53,
+    "recommendations_count": 7
+  }
+}

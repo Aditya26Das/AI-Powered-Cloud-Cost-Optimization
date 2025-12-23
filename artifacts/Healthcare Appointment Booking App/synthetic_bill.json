@@ -1,0 +1,123 @@
+[
+  {
+    "month": "2024-07",
+    "service": "EC2",
+    "resource_id": "Compute Nano VM for Healthcare App",
+    "region": "ap-south-1",
+    "usage_type": "Compute per VM-month",
+    "usage_quantity": 100,
+    "unit": "VM-month",
+    "cost_inr": 1300,
+    "desc": "Compute Nano VM for Healthcare App"
+  },
+  {
+    "month": "2024-07",
+    "service": "RDS",
+    "resource_id": "Managed SQL DB (Small) for Dev DB",
+    "region": "ap-south-1",
+    "usage_type": "Database per instance-month",
+    "usage_quantity": 2,
+    "unit": "instance-month",
+    "cost_inr": 6800,
+    "desc": "Managed SQL DB (Small) for Dev DB"
+  },
+  {
+    "month": "2024-07",
+    "service": "S3",
+    "resource_id": "Object Storage Standard Storage for Hot Tier",
+    "region": "ap-south-1",
+    "usage_type": "Standard Storage per 100 GB",
+    "usage_quantity": 6,
+    "unit": "100 GB",
+    "cost_inr": 2190,
+    "desc": "Object Storage Standard Storage for Hot Tier"
+  },
+  {
+    "month": "2024-07",
+    "service": "API Gateway",
+    "resource_id": "API Gateway for 10000 Users",
+    "region": "ap-south-1",
+    "usage_type": "API Gateway Networking per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 6500,
+    "desc": "API Gateway for 10000 Users"
+  },
+  {
+    "month": "2024-07",
+    "service": "ALB",
+    "resource_id": "Load Balancer for 8,000 Patients",
+    "region": "ap-south-1",
+    "usage_type": "Load Balancer Networking per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 3700,
+    "desc": "Load Balancer for 8,000 Patients"
+  },
+  {
+    "month": "2024-07",
+    "service": "CloudWatch",
+    "resource_id": "Monitoring & Logs Monitoring for Basic Metrics",
+    "region": "ap-south-1",
+    "usage_type": "Monitoring per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 1300,
+    "desc": "Monitoring & Logs Monitoring for Basic Metrics"
+  },
+  {
+    "month": "2024-07",
+    "service": "EC2",
+    "resource_id": "Compute Medium VM for Healthcare App",
+    "region": "ap-south-1",
+    "usage_type": "Compute per VM-month",
+    "usage_quantity": 4,
+    "unit": "VM-month",
+    "cost_inr": 10000,
+    "desc": "Compute Medium VM for Healthcare App"
+  },
+  {
+    "month": "2024-07",
+    "service": "RDS",
+    "resource_id": "Managed SQL DB (Large) for HA DB",
+    "region": "ap-south-1",
+    "usage_type": "Database per instance-month",
+    "usage_quantity": 1,
+    "unit": "instance-month",
+    "cost_inr": 32000,
+    "desc": "Managed SQL DB (Large) for HA DB"
+  },
+  {
+    "month": "2024-07",
+    "service": "S3",
+    "resource_id": "Object Storage Infrequent Storage for Cool Tier",
+    "region": "ap-south-1",
+    "usage_type": "Infrequent Storage per 100 GB",
+    "usage_quantity": 7,
+    "unit": "100 GB",
+    "cost_inr": 1340,
+    "desc": "Object Storage Infrequent Storage for Cool Tier"
+  },
+  {
+    "month": "2024-07",
+    "service": "API Gateway",
+    "resource_id": "API Gateway for 10000 Users",
+    "region": "ap-south-1",
+    "usage_type": "API Gateway Networking per month",
+    "usage_quantity": 2,
+    "unit": "month",
+    "cost_inr": 13000,
+    "desc": "API Gateway for 10000 Users"
+  },
+  {
+    "month": "2024-07",
+    "service": "ALB",
+    "resource_id": "Load Balancer for 8,000 Patients",
+    "region": "ap-south-1",
+    "usage_type": "Load Balancer Networking per month",
+    "usage_quantity": 2,
+    "unit": "month",
+    "cost_inr": 7400,
+    "desc": "Load Balancer for 8,000 Patients"
+  }
+]

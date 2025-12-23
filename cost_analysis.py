@@ -24,7 +24,7 @@ def analyse_costs(project_profile: dict, synthetic_bill: list):
     )
 
     budget = project_profile["budget_inr_per_month"]
-    budget_variance = budget - total_monthly_cost
+    budget_variance = total_monthly_cost - budget
 
     service_costs = {}
     for item in synthetic_bill:

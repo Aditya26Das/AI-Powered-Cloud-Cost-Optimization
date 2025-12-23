@@ -1,166 +1,159 @@
 {
   "project_name": "FoodDeliveryApp",
   "analysis": {
-    "total_monthly_cost": 148420,
+    "total_monthly_cost": 50980,
     "budget": 50000,
-    "budget_variance": -98420,
-    "is_over_budget": true,
+    "budget_variance": 980,
+    "is_over_budget": false,
     "service_costs": {
-      "Compute Small VM": 4000,
-      "Compute Medium VM": 40000,
-      "Managed SQL DB (Small)": 73800,
-      "Managed SQL DB (Medium)": 8200,
-      "Object Storage Standard Storage": 5500,
-      "Object Storage Infrequent Storage": 560,
-      "Block Storage HDD": 6960,
-      "Load Balancer": 7000,
-      "Monitoring & Logs": 2400
+      "Compute": 2400,
+      "Object Storage": 14080,
+      "Managed SQL DB": 15000,
+      "Load Balancer": 3500,
+      "API Gateway": 6200,
+      "VPC Peering": 1200,
+      "Monitoring & Logs": 1200,
+      "WAF": 4500,
+      "CI/CD Pipeline": 2000,
+      "Artifact Registry": 900
     },
     "high_cost_services": {
-      "Managed SQL DB (Small)": 73800,
-      "Load Balancer": 7000,
-      "Compute Medium VM": 40000
+      "Managed SQL DB": 15000,
+      "Object Storage": 14080
     }
   },
   "recommendations": [
     {
-      "title": "Resize Compute Medium VM to Compute Small VM",
-      "service": "Compute Medium VM",
-      "current_cost": 40000,
-      "potential_savings": 28000,
-      "recommendation_type": "right_sizing",
-      "description": "Resize Compute Medium VM to Compute Small VM to save costs.",
+      "title": "Migrate to Open Source Database",
+      "service": "Managed SQL DB",
+      "current_cost": 15000,
+      "potential_savings": 14500,
+      "recommendation_type": "open_source",
+      "description": "Use PostgreSQL or MySQL instead of Managed SQL DB",
       "implementation_effort": "medium",
       "risk_level": "low",
       "steps": [
-        "Identify Compute Medium VM instances",
-        "Resize instances to Compute Small VM",
-        "Verify instance changes"
-      ],
-      "cloud_providers": [
-        "AWS",
-        "Azure",
-        "GCP"
-      ]
-    },
-    {
-      "title": "Migrate to Azure Managed SQL DB (Small)",
-      "service": "Managed SQL DB (Small)",
-      "current_cost": 73800,
-      "potential_savings": 12900,
-      "recommendation_type": "alternative_provider",
-      "description": "Migrate to Azure Managed SQL DB (Small) to save costs.",
-      "implementation_effort": "high",
-      "risk_level": "medium",
-      "steps": [
-        "Identify Managed SQL DB (Small) instances",
-        "Migrate instances to Azure",
-        "Verify database changes"
-      ],
-      "cloud_providers": [
-        "Azure"
-      ]
-    },
-    {
-      "title": "Use Object Storage Infrequent Access",
-      "service": "Object Storage Standard Storage",
-      "current_cost": 5500,
-      "potential_savings": 4400,
-      "recommendation_type": "right_sizing",
-      "description": "Use Object Storage Infrequent Access to save costs.",
-      "implementation_effort": "low",
-      "risk_level": "low",
-      "steps": [
-        "Identify Object Storage Standard Storage instances",
-        "Migrate instances to Infrequent Access",
-        "Verify storage changes"
-      ],
-      "cloud_providers": [
-        "AWS",
-        "Azure",
-        "GCP"
-      ]
-    },
-    {
-      "title": "Implement Monitoring & Logs using Open-source Tools",
-      "service": "Monitoring & Logs",
-      "current_cost": 2400,
-      "potential_savings": 2400,
-      "recommendation_type": "open_source",
-      "description": "Implement Monitoring & Logs using Open-source Tools to save costs.",
-      "implementation_effort": "high",
-      "risk_level": "medium",
-      "steps": [
-        "Identify Monitoring & Logs instances",
-        "Implement Open-source Tools",
-        "Verify logging changes"
+        "Stop Managed SQL DB, set up PostgreSQL or MySQL, migrate data"
       ],
       "cloud_providers": [
         "Open-source"
       ]
     },
     {
-      "title": "Use Block Storage HDD with Lower Capacity",
-      "service": "Block Storage HDD",
-      "current_cost": 6960,
-      "potential_savings": 3480,
-      "recommendation_type": "right_sizing",
-      "description": "Use Block Storage HDD with Lower Capacity to save costs.",
-      "implementation_effort": "medium",
-      "risk_level": "low",
-      "steps": [
-        "Identify Block Storage HDD instances",
-        "Migrate instances to Lower Capacity",
-        "Verify storage changes"
-      ],
-      "cloud_providers": [
-        "AWS",
-        "Azure",
-        "GCP"
-      ]
-    },
-    {
-      "title": "Use Free-tier Load Balancer",
-      "service": "Load Balancer",
-      "current_cost": 7000,
-      "potential_savings": 7000,
-      "recommendation_type": "free_tier",
-      "description": "Use Free-tier Load Balancer to save costs.",
-      "implementation_effort": "low",
-      "risk_level": "low",
-      "steps": [
-        "Identify Load Balancer instances",
-        "Migrate instances to Free-tier",
-        "Verify load balancer changes"
-      ],
-      "cloud_providers": [
-        "AWS",
-        "Azure",
-        "GCP"
-      ]
-    },
-    {
-      "title": "Migrate to GCP Managed SQL DB (Medium)",
-      "service": "Managed SQL DB (Medium)",
-      "current_cost": 8200,
-      "potential_savings": 500,
-      "recommendation_type": "alternative_provider",
-      "description": "Migrate to GCP Managed SQL DB (Medium) to save costs.",
+      "title": "Reduce Object Storage Usage",
+      "service": "Object Storage",
+      "current_cost": 14080,
+      "potential_savings": 13440,
+      "recommendation_type": "optimization",
+      "description": "Use Amazon S3 or Azure Blob Storage instead of Object Storage and tune storage settings",
       "implementation_effort": "high",
       "risk_level": "medium",
       "steps": [
-        "Identify Managed SQL DB (Medium) instances",
-        "Migrate instances to GCP",
-        "Verify database changes"
+        "Migrate to Amazon S3 or Azure Blob Storage, tune storage settings"
       ],
       "cloud_providers": [
-        "GCP"
+        "AWS",
+        "Azure"
+      ]
+    },
+    {
+      "title": "Use Spot Instances for Compute",
+      "service": "Compute",
+      "current_cost": 2400,
+      "potential_savings": 1200,
+      "recommendation_type": "right_sizing",
+      "description": "Use Spot Instances instead of On-Demand Instances for Compute",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Set up Spot Instances for Compute"
+      ],
+      "cloud_providers": [
+        "AWS"
+      ]
+    },
+    {
+      "title": "Optimize Load Balancer Configuration",
+      "service": "Load Balancer",
+      "current_cost": 3500,
+      "potential_savings": 2800,
+      "recommendation_type": "optimization",
+      "description": "Use ELB (Elastic Load Balancer) instead of Load Balancer and tune configuration",
+      "implementation_effort": "high",
+      "risk_level": "medium",
+      "steps": [
+        "Migrate to ELB, tune configuration"
+      ],
+      "cloud_providers": [
+        "AWS"
+      ]
+    },
+    {
+      "title": "Use Open Source Artifact Registry",
+      "service": "Artifact Registry",
+      "current_cost": 900,
+      "potential_savings": 0,
+      "recommendation_type": "open_source",
+      "description": "Use Docker Hub or Nexus instead of Artifact Registry",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Set up Docker Hub or Nexus"
+      ],
+      "cloud_providers": [
+        "Open-source"
+      ]
+    },
+    {
+      "title": "Downgrade Managed SQL DB",
+      "service": "Managed SQL DB",
+      "current_cost": 15000,
+      "potential_savings": 8000,
+      "recommendation_type": "right_sizing",
+      "description": "Downgrade Managed SQL DB from Medium to Small",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Downgrade Managed SQL DB"
+      ],
+      "cloud_providers": []
+    },
+    {
+      "title": "Use Azure Load Balancer",
+      "service": "Load Balancer",
+      "current_cost": 3500,
+      "potential_savings": 3100,
+      "recommendation_type": "alternative_provider",
+      "description": "Use Azure Load Balancer instead of AWS Load Balancer",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Set up Azure Load Balancer"
+      ],
+      "cloud_providers": [
+        "Azure"
+      ]
+    },
+    {
+      "title": "Optimize CI/CD Pipeline",
+      "service": "CI/CD Pipeline",
+      "current_cost": 2000,
+      "potential_savings": 1500,
+      "recommendation_type": "optimization",
+      "description": "Use Jenkins or GitLab instead of CI/CD Pipeline",
+      "implementation_effort": "high",
+      "risk_level": "medium",
+      "steps": [
+        "Set up Jenkins or GitLab"
+      ],
+      "cloud_providers": [
+        "Open-source"
       ]
     }
   ],
   "summary": {
-    "total_potential_savings": 66280,
-    "savings_percentage": 44.7,
-    "recommendations_count": 8
+    "total_potential_savings": 44500,
+    "savings_percentage": 87.0,
+    "recommendations_count": 9
   }
 }

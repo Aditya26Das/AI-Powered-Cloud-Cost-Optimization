@@ -1,0 +1,4 @@
+We are building a healthcare appointment booking app for 8,000 patients per month.
+Budget: ₹40,000 per month.
+Tech stack: Node.js backend, PostgreSQL database, secure authentication, object storage for reports, logging, and monitoring.
+Non-functional requirements: data security, uptime, regulatory compliance.

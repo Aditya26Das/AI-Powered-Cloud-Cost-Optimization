@@ -1,0 +1,17 @@
+{
+  "name": "Online Learning Platform",
+  "budget_inr_per_month": 80000,
+  "description": "Online learning platform for 20,000 monthly users",
+  "tech_stack": {
+    "backend": "Django",
+    "database": "PostgreSQL",
+    "storage": "Object Storage",
+    "content_delivery_network": "CDN",
+    "monitoring": "Analytics"
+  },
+  "non_functional_requirements": [
+    "scalability",
+    "performance",
+    "fault tolerance"
+  ]
+}

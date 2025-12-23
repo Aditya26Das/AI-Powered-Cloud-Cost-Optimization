@@ -1,0 +1,123 @@
+[
+  {
+    "month": "2025-01",
+    "service": "Compute Large VM",
+    "resource_id": "rls-web-01",
+    "region": "ap-south-1",
+    "usage_type": "Compute per VM-month",
+    "usage_quantity": 2,
+    "unit": "VM",
+    "cost_inr": 21000,
+    "desc": "Ride-sharing web server"
+  },
+  {
+    "month": "2025-01",
+    "service": "Managed SQL DB (Small)",
+    "resource_id": "mssql-dev-01",
+    "region": "ap-south-1",
+    "usage_type": "Database per instance-month",
+    "usage_quantity": 1,
+    "unit": "instance",
+    "cost_inr": 8200,
+    "desc": "Ride-sharing Dev DB"
+  },
+  {
+    "month": "2025-01",
+    "service": "Object Storage",
+    "resource_id": "oss-01",
+    "region": "ap-south-1",
+    "usage_type": "Standard Storage per 100 GB",
+    "usage_quantity": 6,
+    "unit": "GB",
+    "cost_inr": 1320,
+    "desc": "Ride-sharing object storage"
+  },
+  {
+    "month": "2025-01",
+    "service": "Load Balancer",
+    "resource_id": "lb-01",
+    "region": "ap-south-1",
+    "usage_type": "Networking per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 3500,
+    "desc": "Ride-sharing load balancing"
+  },
+  {
+    "month": "2025-01",
+    "service": "API Gateway",
+    "resource_id": "apigw-01",
+    "region": "ap-south-1",
+    "usage_type": "Networking per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 6200,
+    "desc": "Ride-sharing API gateway"
+  },
+  {
+    "month": "2025-01",
+    "service": "Load Balancer",
+    "resource_id": "lb-02",
+    "region": "ap-south-1",
+    "usage_type": "Networking per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 3500,
+    "desc": "Ride-sharing load balancing"
+  },
+  {
+    "month": "2025-01",
+    "service": "Load Balancer",
+    "resource_id": "lb-03",
+    "region": "ap-south-1",
+    "usage_type": "Networking per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 3500,
+    "desc": "Ride-sharing load balancing"
+  },
+  {
+    "month": "2025-01",
+    "service": "Compute Small VM",
+    "resource_id": "cmp-small-01",
+    "region": "ap-south-1",
+    "usage_type": "Compute per VM-month",
+    "usage_quantity": 3,
+    "unit": "VM",
+    "cost_inr": 3900,
+    "desc": "Ride-sharing small compute instance"
+  },
+  {
+    "month": "2025-01",
+    "service": "Compute Large VM",
+    "resource_id": "cmp-large-01",
+    "region": "ap-south-1",
+    "usage_type": "Compute per VM-month",
+    "usage_quantity": 3,
+    "unit": "VM",
+    "cost_inr": 21000,
+    "desc": "Ride-sharing large compute instance"
+  },
+  {
+    "month": "2025-01",
+    "service": "API Gateway",
+    "resource_id": "apigw-02",
+    "region": "ap-south-1",
+    "usage_type": "Networking per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 6200,
+    "desc": "Ride-sharing API gateway"
+  },
+  {
+    "month": "2025-01",
+    "service": "Load Balancer",
+    "resource_id": "lb-04",
+    "region": "ap-south-1",
+    "usage_type": "Networking per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 3500,
+    "desc": "Ride-sharing load balancing"
+  }
+]

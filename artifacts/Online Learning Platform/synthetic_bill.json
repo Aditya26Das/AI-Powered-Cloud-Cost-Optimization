@@ -1,0 +1,123 @@
+[
+  {
+    "month": "2025-01",
+    "service": "Managed SQL DB",
+    "resource_id": "sql-srv-01",
+    "region": "ap-south-1",
+    "usage_type": "Prod DB",
+    "usage_quantity": 1,
+    "unit": "instance-month",
+    "cost_inr": 30000,
+    "desc": "Managed SQL Database Server for Online Learning Platform"
+  },
+  {
+    "month": "2025-01",
+    "service": "Managed SQL DB",
+    "resource_id": "sql-srv-02",
+    "region": "ap-south-1",
+    "usage_type": "Prod DB",
+    "usage_quantity": 1,
+    "unit": "instance-month",
+    "cost_inr": 30000,
+    "desc": "Managed SQL Database Server for Online Learning Platform"
+  },
+  {
+    "month": "2025-01",
+    "service": "NoSQL Managed DB",
+    "resource_id": "nosql-srv-01",
+    "region": "ap-south-1",
+    "usage_type": "NoSQL service",
+    "usage_quantity": 2,
+    "unit": "month",
+    "cost_inr": 25000,
+    "desc": "NoSQL Database Service for Online Learning Platform"
+  },
+  {
+    "month": "2025-01",
+    "service": "In-memory Cache",
+    "resource_id": "cache-srv-01",
+    "region": "ap-south-1",
+    "usage_type": "Redis",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 6200,
+    "desc": "In-memory Cache Service for Online Learning Platform"
+  },
+  {
+    "month": "2025-01",
+    "service": "Compute XLarge VM",
+    "resource_id": "ec2-vm-xlarge-01",
+    "region": "ap-south-1",
+    "usage_type": "large",
+    "usage_quantity": 2,
+    "unit": "VM-month",
+    "cost_inr": 66000,
+    "desc": "Compute XLarge VM Instance for Online Learning Platform"
+  },
+  {
+    "month": "2025-01",
+    "service": "Load Balancer",
+    "resource_id": "lb-srv-01",
+    "region": "ap-south-1",
+    "usage_type": "Application LB",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 3500,
+    "desc": "Load Balancer Service for Online Learning Platform"
+  },
+  {
+    "month": "2025-01",
+    "service": "CDN",
+    "resource_id": "cdn-srv-01",
+    "region": "ap-south-1",
+    "usage_type": "Global CDN",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 3000,
+    "desc": "Content Delivery Network for Online Learning Platform"
+  },
+  {
+    "month": "2025-01",
+    "service": "Object Storage",
+    "resource_id": "s3-bucket-01",
+    "region": "ap-south-1",
+    "usage_type": "Standard Storage",
+    "usage_quantity": 2,
+    "unit": "100 GB",
+    "cost_inr": 440,
+    "desc": "Object Storage for Online Learning Platform"
+  },
+  {
+    "month": "2025-01",
+    "service": "Object Storage",
+    "resource_id": "s3-bucket-02",
+    "region": "ap-south-1",
+    "usage_type": "Standard Storage",
+    "usage_quantity": 3,
+    "unit": "100 GB",
+    "cost_inr": 660,
+    "desc": "Object Storage for Online Learning Platform"
+  },
+  {
+    "month": "2025-01",
+    "service": "Block Storage",
+    "resource_id": "ebs-volume-01",
+    "region": "ap-south-1",
+    "usage_type": "Premium SSD",
+    "usage_quantity": 1,
+    "unit": "100 GB",
+    "cost_inr": 950,
+    "desc": "Block Storage for Online Learning Platform"
+  },
+  {
+    "month": "2025-01",
+    "service": "Monitoring & Logs",
+    "resource_id": "monitoring-srv-01",
+    "region": "ap-south-1",
+    "usage_type": "Basic metrics",
+    "usage_quantity": 2,
+    "unit": "month",
+    "cost_inr": 2600,
+    "desc": "Monitoring and Logging Service for Online Learning Platform"
+  }
+]

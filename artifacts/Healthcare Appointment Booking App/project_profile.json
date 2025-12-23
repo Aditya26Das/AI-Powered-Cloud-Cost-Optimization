@@ -1,0 +1,20 @@
+{
+  "name": "Healthcare Appointment Booking App",
+  "budget_inr_per_month": 40000,
+  "description": "Healthcare appointment booking app for 8,000 patients per month",
+  "tech_stack": {
+    "frontend": "",
+    "backend": "Node.js",
+    "database": "PostgreSQL",
+    "storing": "object storage",
+    "networking": "",
+    "monitoring": "logging, monitoring",
+    "analytics": "",
+    "authentication": "secure authentication"
+  },
+  "non_functional_requirements": [
+    "data security",
+    "uptime",
+    "regulatory compliance"
+  ]
+}

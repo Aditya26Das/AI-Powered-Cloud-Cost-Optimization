@@ -16,6 +16,7 @@ The output **must include**:-
 6. Total potential savings must never exceed total monthly cost.
 7. Savings percentage must be capped at 100%.
 8. A given service can only allow only one active optimization per service.
+9. **Donot** recommend suggestions like **switch to free tier**, instead recommend suggestions like **use Open Source platforms like**.
 
 {
   "project_name": "string",

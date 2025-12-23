@@ -1,0 +1,123 @@
+[
+  {
+    "month": "2024-05",
+    "service": "Compute Large VM",
+    "resource_id": "LargeNode-1",
+    "region": "",
+    "usage_type": "Compute per VM-month",
+    "usage_quantity": 2,
+    "unit": "VM-month",
+    "cost_inr": 19500,
+    "desc": "Large Compute Node"
+  },
+  {
+    "month": "2024-05",
+    "service": "Object Storage Infrequent Storage",
+    "resource_id": "Storage-Infrequent-1",
+    "region": "",
+    "usage_type": "Storage per 100 GB",
+    "usage_quantity": 5,
+    "unit": "100 GB",
+    "cost_inr": 600,
+    "desc": "Infrequent Storage"
+  },
+  {
+    "month": "2024-05",
+    "service": "Managed SQL DB (Medium)",
+    "resource_id": "DB-Prod-1",
+    "region": "",
+    "usage_type": "Database per instance-month",
+    "usage_quantity": 4,
+    "unit": "instance-month",
+    "cost_inr": 60000,
+    "desc": "Production Database"
+  },
+  {
+    "month": "2024-05",
+    "service": "Load Balancer",
+    "resource_id": "LoadBalancer-1",
+    "region": "",
+    "usage_type": "Networking per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 3500,
+    "desc": "Load Balancer"
+  },
+  {
+    "month": "2024-05",
+    "service": "Block Storage SSD",
+    "resource_id": "Storage-SSD-1",
+    "region": "",
+    "usage_type": "Storage per 100 GB",
+    "usage_quantity": 3,
+    "unit": "100 GB",
+    "cost_inr": 2850,
+    "desc": "SSD Storage"
+  },
+  {
+    "month": "2024-05",
+    "service": "Database (Small)",
+    "resource_id": "DB-Dev-1",
+    "region": "",
+    "usage_type": "Database per instance-month",
+    "usage_quantity": 2,
+    "unit": "instance-month",
+    "cost_inr": 17000,
+    "desc": "Development Database"
+  },
+  {
+    "month": "2024-05",
+    "service": "Event Bus",
+    "resource_id": "EventBus-1",
+    "region": "",
+    "usage_type": "Application per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 1300,
+    "desc": "Event Bus Service"
+  },
+  {
+    "month": "2024-05",
+    "service": "Provisioned IOPS Add-on",
+    "resource_id": "Storage-IOPS-1",
+    "region": "",
+    "usage_type": "Add-on Storage per month",
+    "usage_quantity": 2,
+    "unit": "month",
+    "cost_inr": 6400,
+    "desc": "High IOPS Storage"
+  },
+  {
+    "month": "2024-05",
+    "service": "API Gateway",
+    "resource_id": "APIGateway-1",
+    "region": "",
+    "usage_type": "Networking per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 6200,
+    "desc": "API Gateway"
+  },
+  {
+    "month": "2024-05",
+    "service": "In-memory Cache",
+    "resource_id": "Cache-1",
+    "region": "",
+    "usage_type": "Database per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 6200,
+    "desc": "In-memory Cache"
+  },
+  {
+    "month": "2024-05",
+    "service": "Reserved Instance (Medium)",
+    "resource_id": "RI-Medium-1",
+    "region": "",
+    "usage_type": "Compute per VM-month",
+    "usage_quantity": 1,
+    "unit": "VM-month",
+    "cost_inr": 7800,
+    "desc": "Reserved Medium Instance"
+  }
+]

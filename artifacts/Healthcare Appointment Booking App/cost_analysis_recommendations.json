@@ -1,0 +1,154 @@
+{
+  "project_name": "Healthcare Appointment Booking App",
+  "analysis": {
+    "total_monthly_cost": 67400,
+    "budget": 40000,
+    "budget_variance": 27400,
+    "is_over_budget": true,
+    "service_costs": {
+      "EC2": 34000,
+      "RDS": 45000,
+      "S3": 21200,
+      "API Gateway": 35000,
+      "ALB": 18000,
+      "CloudWatch": 1300
+    },
+    "high_cost_services": {
+      "RDS": 45000,
+      "EC2": 34000,
+      "API Gateway": 35000
+    }
+  },
+  "recommendations": [
+    {
+      "title": "Migrate RDS to PostgreSQL",
+      "service": "RDS",
+      "current_cost": 45000,
+      "potential_savings": 15000,
+      "recommendation_type": "open_source",
+      "description": "Use PostgreSQL, an open-source relational database management system, instead of AWS RDS.",
+      "implementation_effort": "high",
+      "risk_level": "medium",
+      "steps": [
+        "Assess the compatibility of PostgreSQL with your existing database schema.",
+        "Migrate your database to PostgreSQL.",
+        "Update any dependent applications to use PostgreSQL."
+      ],
+      "cloud_providers": [
+        "AWS | Azure | GCP | Open-source"
+      ]
+    },
+    {
+      "title": "Right-size EC2 instances",
+      "service": "EC2",
+      "current_cost": 34000,
+      "potential_savings": 10000,
+      "recommendation_type": "right_sizing",
+      "description": "Downsize your EC2 instances to smaller, more cost-effective sizes.",
+      "implementation_effort": "medium",
+      "risk_level": "low",
+      "steps": [
+        "Assess the current usage of your EC2 instances.",
+        "Downsize instances to smaller sizes based on usage patterns.",
+        "Monitor usage patterns and adjust sizes as needed."
+      ],
+      "cloud_providers": [
+        "AWS | Azure | GCP"
+      ]
+    },
+    {
+      "title": "Use Azure Cosmos DB instead of AWS RDS",
+      "service": "RDS",
+      "current_cost": 45000,
+      "potential_savings": 12000,
+      "recommendation_type": "alternative_provider",
+      "description": "Use Azure Cosmos DB, a globally distributed, multi-model database service, instead of AWS RDS.",
+      "implementation_effort": "high",
+      "risk_level": "medium",
+      "steps": [
+        "Assess the compatibility of Azure Cosmos DB with your existing database schema.",
+        "Migrate your database to Azure Cosmos DB.",
+        "Update any dependent applications to use Azure Cosmos DB."
+      ],
+      "cloud_providers": [
+        "Azure"
+      ]
+    },
+    {
+      "title": "Use AWS S3 Infrequent Access (IA) instead of Standard Storage",
+      "service": "S3",
+      "current_cost": 21200,
+      "potential_savings": 4000,
+      "recommendation_type": "right_sizing",
+      "description": "Use AWS S3 Infrequent Access (IA) for storage that is infrequently accessed.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Assess the access patterns of your S3 buckets.",
+        "Move infrequently accessed data to S3 IA.",
+        "Monitor access patterns and adjust storage as needed."
+      ],
+      "cloud_providers": [
+        "AWS"
+      ]
+    },
+    {
+      "title": "Use GCP Cloud Storage instead of AWS S3",
+      "service": "S3",
+      "current_cost": 21200,
+      "potential_savings": 2000,
+      "recommendation_type": "alternative_provider",
+      "description": "Use GCP Cloud Storage, a NoSQL, object storage service, instead of AWS S3.",
+      "implementation_effort": "medium",
+      "risk_level": "medium",
+      "steps": [
+        "Assess the compatibility of GCP Cloud Storage with your existing application.",
+        "Migrate your data to GCP Cloud Storage.",
+        "Update any dependent applications to use GCP Cloud Storage."
+      ],
+      "cloud_providers": [
+        "GCP"
+      ]
+    },
+    {
+      "title": "Use Apache Cassandra instead of AWS RDS",
+      "service": "RDS",
+      "current_cost": 45000,
+      "potential_savings": 18000,
+      "recommendation_type": "open_source",
+      "description": "Use Apache Cassandra, a free and open-source, distributed NoSQL database management system, instead of AWS RDS.",
+      "implementation_effort": "high",
+      "risk_level": "medium",
+      "steps": [
+        "Assess the compatibility of Apache Cassandra with your existing database schema.",
+        "Migrate your database to Apache Cassandra.",
+        "Update any dependent applications to use Apache Cassandra."
+      ],
+      "cloud_providers": [
+        "AWS | Azure | GCP | Open-source"
+      ]
+    },
+    {
+      "title": "Use AWS API Gateway's free tier",
+      "service": "API Gateway",
+      "current_cost": 35000,
+      "potential_savings": 0,
+      "recommendation_type": "free_tier",
+      "description": "Use AWS API Gateway's free tier instead of the paid tier.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Assess the usage of your API Gateway.",
+        "Move to AWS API Gateway's free tier if usage is within the free tier limits."
+      ],
+      "cloud_providers": [
+        "AWS"
+      ]
+    }
+  ],
+  "summary": {
+    "total_potential_savings": 57000,
+    "savings_percentage": 84.67,
+    "recommendations_count": 7
+  }
+}

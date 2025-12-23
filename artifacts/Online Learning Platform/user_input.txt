@@ -1,0 +1,4 @@
+We are building an online learning platform for 20,000 monthly users.
+Budget: ₹80,000 per month.
+Tech stack: Django backend, PostgreSQL database, video storage via object storage, CDN for content delivery, analytics, and monitoring.
+Non-functional requirements: scalability, performance, fault tolerance.

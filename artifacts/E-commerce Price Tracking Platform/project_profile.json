@@ -1,0 +1,16 @@
+{
+  "name": "E-commerce Price Tracking Platform",
+  "budget_inr_per_month": 25000,
+  "description": "E-commerce price tracking platform for 5,000 users per month",
+  "tech_stack": {
+    "backend": "Python (FastAPI)",
+    "database": "MongoDB",
+    "storage": "object storage for logs",
+    "monitoring": "basic monitoring"
+  },
+  "non_functional_requirements": [
+    "reliability",
+    "cost efficiency",
+    "scheduled automation"
+  ]
+}

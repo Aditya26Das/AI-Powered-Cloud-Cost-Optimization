@@ -1,0 +1,4 @@
+We are building a ride-sharing MVP for 2,000 daily active users.
+Budget: ₹60,000 per month.
+Tech stack: Java Spring Boot backend, PostgreSQL database, real-time location tracking, notification service, and monitoring tools.
+Non-functional requirements: low latency, scalability, real-time reliability.

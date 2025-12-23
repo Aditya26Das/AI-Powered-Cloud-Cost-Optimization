@@ -1,0 +1,158 @@
+{
+  "project_name": "Online Learning Platform",
+  "analysis": {
+    "total_monthly_cost": 263710,
+    "budget": 80000,
+    "budget_variance": 183710,
+    "is_over_budget": true,
+    "service_costs": {
+      "Managed SQL DB": 60000,
+      "NoSQL Managed DB": 50000,
+      "In-memory Cache": 6200,
+      "Compute XLarge VM": 132000,
+      "Load Balancer": 3500,
+      "CDN": 3000,
+      "Object Storage": 2860,
+      "Block Storage": 950,
+      "Monitoring & Logs": 5200
+    },
+    "high_cost_services": {
+      "Compute XLarge VM": 132000,
+      "Managed SQL DB": 60000,
+      "NoSQL Managed DB": 50000
+    }
+  },
+  "recommendations": [
+    {
+      "title": "Right-size Compute XLarge VM to Large VM",
+      "service": "Compute XLarge VM",
+      "current_cost": 132000,
+      "potential_savings": 21000,
+      "recommendation_type": "right_sizing",
+      "description": "Downgrade Compute XLarge VM to Large VM to save INR 21,000",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Identify suitable workload for Large VM",
+        "Update server configuration"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Migrate Managed SQL DB to PostgreSQL",
+      "service": "Managed SQL DB",
+      "current_cost": 60000,
+      "potential_savings": 40000,
+      "recommendation_type": "open_source",
+      "description": "Replace Managed SQL DB with PostgreSQL to save INR 40,000",
+      "implementation_effort": "medium",
+      "risk_level": "medium",
+      "steps": [
+        "Evaluate data compatibility",
+        "Update SQL queries"
+      ],
+      "cloud_providers": [
+        "Open-source"
+      ]
+    },
+    {
+      "title": "Use Azure or GCP for NoSQL Managed DB",
+      "service": "NoSQL Managed DB",
+      "current_cost": 50000,
+      "potential_savings": 20000,
+      "recommendation_type": "alternative_provider",
+      "description": "Migrate NoSQL Managed DB to Azure or GCP to save INR 20,000",
+      "implementation_effort": "high",
+      "risk_level": "high",
+      "steps": [
+        "Evaluate data compatibility",
+        "Update data storage"
+      ],
+      "cloud_providers": [
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Implement caching with Redis",
+      "service": "In-memory Cache",
+      "current_cost": 6200,
+      "potential_savings": 0,
+      "recommendation_type": "open_source",
+      "description": "Use Redis as caching layer to avoid extra charges",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Evaluate Redis compatibility",
+        "Update caching mechanism"
+      ],
+      "cloud_providers": [
+        "Open-source"
+      ]
+    },
+    {
+      "title": "Optimize Load Balancer usage",
+      "service": "Load Balancer",
+      "current_cost": 3500,
+      "potential_savings": 1500,
+      "recommendation_type": "optimization",
+      "description": "Optimize Load Balancer configuration to save INR 1,500",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Evaluate Load Balancer usage",
+        "Update server configuration"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Use Amazon S3 Infrequent Access (IA) storage",
+      "service": "Object Storage",
+      "current_cost": 2860,
+      "potential_savings": 1450,
+      "recommendation_type": "alternative_provider",
+      "description": "Use Amazon S3 IA storage to save INR 1,450",
+      "implementation_effort": "medium",
+      "risk_level": "medium",
+      "steps": [
+        "Evaluate data access patterns",
+        "Update storage configuration"
+      ],
+      "cloud_providers": [
+        "AWS"
+      ]
+    },
+    {
+      "title": "Downgrade Monitoring & Logs to Basic metrics",
+      "service": "Monitoring & Logs",
+      "current_cost": 5200,
+      "potential_savings": 2000,
+      "recommendation_type": "optimization",
+      "description": "Downgrade Monitoring & Logs to Basic metrics to save INR 2,000",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Evaluate monitoring requirements",
+        "Update monitoring configuration"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    }
+  ],
+  "summary": {
+    "total_potential_savings": 83300,
+    "savings_percentage": 31.48,
+    "recommendations_count": 7
+  }
+}

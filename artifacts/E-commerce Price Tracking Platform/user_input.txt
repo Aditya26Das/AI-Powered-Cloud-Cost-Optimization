@@ -1,0 +1,4 @@
+We are building an e-commerce price tracking platform for 5,000 users per month.
+Budget: ₹25,000 per month.
+Tech stack: Python (FastAPI) backend, MongoDB database, cron jobs for scraping, object storage for logs, email notifications, and basic monitoring.
+Non-functional requirements: reliability, cost efficiency, scheduled automation.

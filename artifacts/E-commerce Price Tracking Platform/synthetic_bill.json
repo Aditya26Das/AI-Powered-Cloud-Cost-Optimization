@@ -1,0 +1,123 @@
+[
+  {
+    "month": "2025-01",
+    "service": "Compute Large VM",
+    "resource_id": "cl-ecommerce-web-01",
+    "region": "India",
+    "usage_type": "large",
+    "usage_quantity": 4,
+    "unit": "VM-month",
+    "cost_inr": 19500,
+    "desc": "Ecommerce web server (8 vCPU, 32GB RAM)"
+  },
+  {
+    "month": "2025-01",
+    "service": "Managed SQL DB (Medium)",
+    "resource_id": "db-ecommerce-mdb-01",
+    "region": "India",
+    "usage_type": "Prod DB",
+    "usage_quantity": 2,
+    "unit": "instance-month",
+    "cost_inr": 15000,
+    "desc": "Ecommerce database (medium, high availability)"
+  },
+  {
+    "month": "2025-01",
+    "service": "Object Storage Standard",
+    "resource_id": "s3-ecommerce-standard-01",
+    "region": "India",
+    "usage_type": "hot tier",
+    "usage_quantity": 8,
+    "unit": "100 GB",
+    "cost_inr": 210,
+    "desc": "Ecommerce standard storage (hot tier)"
+  },
+  {
+    "month": "2025-01",
+    "service": "Load Balancer",
+    "resource_id": "lb-ecommerce-web-01",
+    "region": "India",
+    "usage_type": "application LB",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 3500,
+    "desc": "Ecommerce load balancer"
+  },
+  {
+    "month": "2025-01",
+    "service": "Monitoring & Logs",
+    "resource_id": "monitoring-ecommerce-01",
+    "region": "India",
+    "usage_type": "basic metrics",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 1200,
+    "desc": "Ecommerce monitoring and logs"
+  },
+  {
+    "month": "2025-01",
+    "service": "Block Storage HDD",
+    "resource_id": "b-ecommerce-hdd-01",
+    "region": "India",
+    "usage_type": "large",
+    "usage_quantity": 6,
+    "unit": "100 GB",
+    "cost_inr": 430,
+    "desc": "Ecommerce HDD storage"
+  },
+  {
+    "month": "2025-01",
+    "service": "Backup Storage",
+    "resource_id": "b-ecommerce-backup-01",
+    "region": "India",
+    "usage_type": "large",
+    "usage_quantity": 2,
+    "unit": "100 GB",
+    "cost_inr": 150,
+    "desc": "Ecommerce backup storage"
+  },
+  {
+    "month": "2025-01",
+    "service": "CI/CD Pipeline",
+    "resource_id": "pipeline-ecommerce-01",
+    "region": "India",
+    "usage_type": "build & deploy",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 2000,
+    "desc": "Ecommerce CI/CD pipeline"
+  },
+  {
+    "month": "2025-01",
+    "service": "Artifact Registry",
+    "resource_id": "registry-ecommerce-01",
+    "region": "India",
+    "usage_type": "image registry",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 900,
+    "desc": "Ecommerce artifact registry"
+  },
+  {
+    "month": "2025-01",
+    "service": "Event Bus",
+    "resource_id": "eventbus-ecommerce-01",
+    "region": "India",
+    "usage_type": "event-driven",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 1300,
+    "desc": "Ecommerce event bus"
+  },
+  {
+    "month": "2025-01",
+    "service": "DNS & Domain",
+    "resource_id": "dns-ecommerce-01",
+    "region": "India",
+    "usage_type": "hosted zone",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 260,
+    "desc": "Ecommerce DNS and domain"
+  }
+]

@@ -1,0 +1,170 @@
+{
+  "project_name": "E-commerce Price Tracking Platform",
+  "analysis": {
+    "total_monthly_cost": 121720,
+    "budget": 25000,
+    "budget_variance": 96720,
+    "is_over_budget": true,
+    "service_costs": {
+      "Compute Large VM": 78000,
+      "Managed SQL DB (Medium)": 30000,
+      "Object Storage Standard": 1680,
+      "Load Balancer": 3500,
+      "Monitoring & Logs": 1200,
+      "Block Storage HDD": 2580,
+      "Backup Storage": 300,
+      "CI/CD Pipeline": 2000,
+      "Artifact Registry": 900,
+      "Event Bus": 1300,
+      "DNS & Domain": 260
+    },
+    "high_cost_services": {
+      "Compute Large VM": 78000,
+      "Managed SQL DB (Medium)": 30000
+    }
+  },
+  "recommendations": [
+    {
+      "title": "Downsize Compute Large VM",
+      "service": "Compute Large VM",
+      "current_cost": 78000,
+      "potential_savings": 36000,
+      "recommendation_type": "right_sizing",
+      "description": "Downsize the Compute Large VM to Compute Medium VM which will provide 4 vCPU, 16GB RAM for half the cost.",
+      "implementation_effort": "medium",
+      "risk_level": "low",
+      "steps": [
+        "Identify the unused resources in the Compute Large VM",
+        "Create a new Compute Medium VM with 4 vCPU, 16GB RAM",
+        "Migrate the workload to the new Compute Medium VM"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Migrate Managed SQL DB to Open Source",
+      "service": "Managed SQL DB (Medium)",
+      "current_cost": 30000,
+      "potential_savings": 30000,
+      "recommendation_type": "open_source",
+      "description": "Migrate the Managed SQL DB to an open source database solution like PostgreSQL.",
+      "implementation_effort": "high",
+      "risk_level": "medium",
+      "steps": [
+        "Identify the database schema and migrate it to PostgreSQL",
+        "Migrate the data from Managed SQL DB to PostgreSQL",
+        "Configure PostgreSQL for high availability"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Open-source"
+      ]
+    },
+    {
+      "title": "Use Open Source Object Storage",
+      "service": "Object Storage Standard",
+      "current_cost": 1680,
+      "potential_savings": 0,
+      "recommendation_type": "open_source",
+      "description": "Use an open source object storage solution like MinIO for storing logs.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Configure MinIO for data replication and high availability",
+        "Migrate the logs from Object Storage Standard to MinIO"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Open-source"
+      ]
+    },
+    {
+      "title": "Use a Load Balancer Alternative",
+      "service": "Load Balancer",
+      "current_cost": 3500,
+      "potential_savings": 2000,
+      "recommendation_type": "alternative_provider",
+      "description": "Use a load balancer alternative like HAProxy for load balancing.",
+      "implementation_effort": "medium",
+      "risk_level": "low",
+      "steps": [
+        "Configure HAProxy for load balancing",
+        "Migrate the workload to HAProxy"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Downsize Block Storage HDD",
+      "service": "Block Storage HDD",
+      "current_cost": 2580,
+      "potential_savings": 800,
+      "recommendation_type": "right_sizing",
+      "description": "Downsize the Block Storage HDD to a smaller size to reduce storage costs.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Identify the unused resources in the Block Storage HDD",
+        "Downsize the Block Storage HDD to a smaller size"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Use a CI/CD Pipeline Alternative",
+      "service": "CI/CD Pipeline",
+      "current_cost": 2000,
+      "potential_savings": 1000,
+      "recommendation_type": "alternative_provider",
+      "description": "Use a CI/CD pipeline alternative like Jenkins for continuous integration and deployment.",
+      "implementation_effort": "medium",
+      "risk_level": "medium",
+      "steps": [
+        "Configure Jenkins for continuous integration and deployment",
+        "Migrate the workload to Jenkins"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    },
+    {
+      "title": "Downsize CI/CD Pipeline",
+      "service": "CI/CD Pipeline",
+      "current_cost": 2000,
+      "potential_savings": 500,
+      "recommendation_type": "right_sizing",
+      "description": "Downsize the CI/CD pipeline to reduce costs.",
+      "implementation_effort": "low",
+      "risk_level": "low",
+      "steps": [
+        "Identify the unused resources in the CI/CD pipeline",
+        "Downsize the CI/CD pipeline to a smaller size"
+      ],
+      "cloud_providers": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ]
+    }
+  ],
+  "summary": {
+    "total_potential_savings": 70000,
+    "savings_percentage": 57.57,
+    "recommendations_count": 8
+  }
+}
