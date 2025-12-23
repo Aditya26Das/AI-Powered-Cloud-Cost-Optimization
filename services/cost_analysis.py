@@ -1,7 +1,7 @@
 import json
 from dotenv import load_dotenv
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
-from utils import extract_json, save_json_file, load_excel_data
+from services.utils import extract_json, save_json_file, load_excel_data
 
 
 def analyse_costs(project_profile: dict, synthetic_bill: list):
@@ -15,7 +15,7 @@ def analyse_costs(project_profile: dict, synthetic_bill: list):
 
     model = ChatHuggingFace(llm=llm)
 
-    with open("cost_analysis_prompt.txt", "r", encoding="utf-8") as f:
+    with open("prompts/cost_analysis_prompt.txt", "r", encoding="utf-8") as f:
         prompt = f.read()
 
     total_monthly_cost = sum(

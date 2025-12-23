@@ -1,7 +1,7 @@
 import json
 from dotenv import load_dotenv
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
-from utils import extract_json, create_folder, save_json_file
+from services.utils import extract_json, create_folder, save_json_file
 
 def generate_project_profile(user_query: str):
     load_dotenv()
@@ -13,7 +13,7 @@ def generate_project_profile(user_query: str):
 
     model = ChatHuggingFace(llm=llm)
 
-    with open("project_profile_prompt.txt", "r", encoding="utf-8") as f:
+    with open("prompts/project_profile_prompt.txt", "r", encoding="utf-8") as f:
         prompt = f.read()
 
     messages = [

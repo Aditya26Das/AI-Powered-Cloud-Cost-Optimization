@@ -1,0 +1,164 @@
+{
+  "project_name": "Fitness Tracker Platform",
+  "analysis": {
+    "total_monthly_cost": 103980,
+    "budget": 55000,
+    "budget_variance": 48880,
+    "is_over_budget": true,
+    "service_costs": {
+      "Compute Large VM": 58500,
+      "Compute Small VM": 9800,
+      "Object Storage Standard Storage": 1680,
+      "Managed SQL DB (Small)": 24600,
+      "Load Balancer": 7000,
+      "Monitoring & Logs": 2400
+    },
+    "high_cost_services": {
+      "Compute Large VM": 58500,
+      "Managed SQL DB (Small)": 24600
+    }
+  },
+  "recommendations": [
+    {
+      "title": "Right-sizing Compute Large VM to AWS Free Tier",
+      "service": "Compute Large VM",
+      "current_cost": 58500,
+      "potential_savings": 44500,
+      "recommendation_type": "right_sizing",
+      "description": "Migrate Compute Large VM to AWS Free Tier for large applications to optimize costs.",
+      "implementation_effort": "high",
+      "risk_level": "medium",
+      "steps": [
+        "Stop using existing Compute Large VM instances",
+        "Create new instances using AWS Free Tier"
+      ],
+      "cloud_providers": [
+        "AWS"
+      ]
+    },
+    {
+      "title": "Use Azure Managed SQL DB for Database",
+      "service": "Managed SQL DB (Small)",
+      "current_cost": 24600,
+      "potential_savings": 9200,
+      "recommendation_type": "alternative_provider",
+      "description": "Migrate Managed SQL DB (Small) to Azure Managed SQL DB to optimize costs.",
+      "implementation_effort": "medium",
+      "risk_level": "low",
+      "steps": [
+        "Stop using existing Managed SQL DB instances",
+        "Create new instances using Azure Managed SQL DB"
+      ],
+      "cloud_providers": [
+        "Azure"
+      ]
+    },
+    {
+      "title": "Use Open Source Prometheus for Monitoring & Logs",
+      "service": "Monitoring & Logs",
+      "current_cost": 4800,
+      "potential_savings": 4800,
+      "recommendation_type": "open_source",
+      "description": "Migrate Monitoring & Logs to Open Source Prometheus to optimize costs.",
+      "implementation_effort": "medium",
+      "risk_level": "low",
+      "steps": [
+        "Stop using existing Monitoring & Logs services",
+        "Create new instances using Open Source Prometheus"
+      ],
+      "cloud_providers": [
+        "Open-source"
+      ]
+    },
+    {
+      "title": "Use Free Tier for Load Balancer",
+      "service": "Load Balancer",
+      "current_cost": 7000,
+      "potential_savings": 7000,
+      "recommendation_type": "free_tier",
+      "description": "Migrate Load Balancer to AWS Free Tier for large applications to optimize costs.",
+      "implementation_effort": "high",
+      "risk_level": "medium",
+      "steps": [
+        "Stop using existing Load Balancer instances",
+        "Create new instances using AWS Free Tier"
+      ],
+      "cloud_providers": [
+        "AWS"
+      ]
+    },
+    {
+      "title": "Use Right-Sizing for Compute Small VM",
+      "service": "Compute Small VM",
+      "current_cost": 9800,
+      "potential_savings": 9800,
+      "recommendation_type": "right_sizing",
+      "description": "Migrate Compute Small VM to GCP Right-Sizing to optimize costs.",
+      "implementation_effort": "medium",
+      "risk_level": "low",
+      "steps": [
+        "Stop using existing Compute Small VM instances",
+        "Create new instances using GCP Right-Sizing"
+      ],
+      "cloud_providers": [
+        "GCP"
+      ]
+    },
+    {
+      "title": "Use Open Source Apache Cassandra for Database",
+      "service": "Managed SQL DB (Small)",
+      "current_cost": 24600,
+      "potential_savings": 10000,
+      "recommendation_type": "open_source",
+      "description": "Migrate Managed SQL DB (Small) to Open Source Apache Cassandra to optimize costs.",
+      "implementation_effort": "high",
+      "risk_level": "medium",
+      "steps": [
+        "Stop using existing Managed SQL DB instances",
+        "Create new instances using Open Source Apache Cassandra"
+      ],
+      "cloud_providers": [
+        "Open-source"
+      ]
+    },
+    {
+      "title": "Use Spot Instances for Compute Small VM",
+      "service": "Compute Small VM",
+      "current_cost": 9800,
+      "potential_savings": 9800,
+      "recommendation_type": "alternative_provider",
+      "description": "Migrate Compute Small VM to Spot Instances to optimize costs.",
+      "implementation_effort": "medium",
+      "risk_level": "low",
+      "steps": [
+        "Stop using existing Compute Small VM instances",
+        "Create new instances using Spot Instances"
+      ],
+      "cloud_providers": [
+        "AWS"
+      ]
+    },
+    {
+      "title": "Use Azure Reserved Instances for Compute Small VM",
+      "service": "Compute Small VM",
+      "current_cost": 9800,
+      "potential_savings": 4900,
+      "recommendation_type": "alternative_provider",
+      "description": "Migrate Compute Small VM to Azure Reserved Instances to optimize costs.",
+      "implementation_effort": "high",
+      "risk_level": "medium",
+      "steps": [
+        "Stop using existing Compute Small VM instances",
+        "Create new instances using Azure Reserved Instances"
+      ],
+      "cloud_providers": [
+        "Azure"
+      ]
+    }
+  ],
+  "summary": {
+    "total_potential_savings": 77400,
+    "savings_percentage": 74.32,
+    "recommendations_count": 8
+  }
+}

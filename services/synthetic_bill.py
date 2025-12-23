@@ -1,7 +1,7 @@
 import json
 from dotenv import load_dotenv
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
-from utils import extract_json_list, save_json_file, load_excel_data
+from services.utils import extract_json_list, save_json_file, load_excel_data
 
 def generate_synthetic_bill(project_profile: dict):
     load_dotenv()
@@ -13,7 +13,7 @@ def generate_synthetic_bill(project_profile: dict):
 
     model = ChatHuggingFace(llm=llm)
 
-    with open("synthetic_bill_prompt.txt", "r", encoding="utf-8") as f:
+    with open("prompts/synthetic_bill_prompt.txt", "r", encoding="utf-8") as f:
         prompt = f.read()
         
     excel_data = load_excel_data()

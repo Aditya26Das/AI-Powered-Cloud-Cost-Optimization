@@ -1,0 +1,17 @@
+{
+  "name": "Fitness Tracker Platform",
+  "budget_inr_per_month": 55000,
+  "description": "Fitness tracking platform for 18,000 users per month.",
+  "tech_stack": {
+    "backend": "Node.js",
+    "database": "PostgreSQL",
+    "storing": "time-series data storage",
+    "monitoring": "monitoring services",
+    "analytics": "analytics dashboard"
+  },
+  "non_functional_requirements": [
+    "performance",
+    "scalability",
+    "data accuracy"
+  ]
+}

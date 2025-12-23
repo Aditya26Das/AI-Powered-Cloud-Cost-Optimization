@@ -1,7 +1,7 @@
 import os
 import json
 from jinja2 import Environment, FileSystemLoader
-from utils import read_json_file
+from services.utils import read_json_file
 
 REPORTS_DIR = os.path.join(os.getcwd(),"reports")
 

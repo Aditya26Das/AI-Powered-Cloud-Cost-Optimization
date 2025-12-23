@@ -3,10 +3,10 @@ import sys
 import time
 import json
 from dotenv import load_dotenv
-from project_report import generate_project_report
-from project_profile import generate_project_profile
-from synthetic_bill import generate_synthetic_bill
-from cost_analysis import analyse_costs
+from services.project_report import generate_project_report
+from services.project_profile import generate_project_profile
+from services.synthetic_bill import generate_synthetic_bill
+from services.cost_analysis import analyse_costs
 
 REPORTS_DIR = "reports"
 

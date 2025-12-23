@@ -1,0 +1,4 @@
+We are building a fitness tracking platform for 18,000 users per month.
+Budget: ₹55,000 per month.
+Tech stack: Node.js backend, PostgreSQL database, time-series data storage, analytics dashboard, and monitoring services.
+Non-functional requirements: performance, scalability, data accuracy.

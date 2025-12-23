@@ -1,0 +1,123 @@
+[
+  {
+    "month": "2025-01",
+    "service": "Compute Large VM",
+    "resource_id": "vm-01",
+    "region": "ap-south-1",
+    "usage_type": "Compute per VM-month",
+    "usage_quantity": 1,
+    "unit": "VM-month",
+    "cost_inr": 19500,
+    "desc": "Fitness tracking platform - large"
+  },
+  {
+    "month": "2025-01",
+    "service": "Compute Large VM",
+    "resource_id": "vm-02",
+    "region": "ap-south-1",
+    "usage_type": "Compute per VM-month",
+    "usage_quantity": 2,
+    "unit": "VM-month",
+    "cost_inr": 19500,
+    "desc": "Fitness tracking platform - large"
+  },
+  {
+    "month": "2025-01",
+    "service": "Compute Small VM",
+    "resource_id": "vm-03",
+    "region": "ap-south-1",
+    "usage_type": "Compute per VM-month",
+    "usage_quantity": 1,
+    "unit": "VM-month",
+    "cost_inr": 9800,
+    "desc": "Fitness tracking platform - small"
+  },
+  {
+    "month": "2025-01",
+    "service": "Object Storage Standard Storage",
+    "resource_id": "obj-01",
+    "region": "ap-south-1",
+    "usage_type": "Storage per 100 GB",
+    "usage_quantity": 5,
+    "unit": "100 GB",
+    "cost_inr": 210,
+    "desc": "Fitness tracking platform - data storage"
+  },
+  {
+    "month": "2025-01",
+    "service": "Object Storage Standard Storage",
+    "resource_id": "obj-02",
+    "region": "ap-south-1",
+    "usage_type": "Storage per 100 GB",
+    "usage_quantity": 3,
+    "unit": "100 GB",
+    "cost_inr": 210,
+    "desc": "Fitness tracking platform - data storage"
+  },
+  {
+    "month": "2025-01",
+    "service": "Managed SQL DB (Small)",
+    "resource_id": "db-01",
+    "region": "ap-south-1",
+    "usage_type": "Database per instance-month",
+    "usage_quantity": 2,
+    "unit": "instance-month",
+    "cost_inr": 8200,
+    "desc": "Fitness tracking platform - database"
+  },
+  {
+    "month": "2025-01",
+    "service": "Managed SQL DB (Small)",
+    "resource_id": "db-02",
+    "region": "ap-south-1",
+    "usage_type": "Database per instance-month",
+    "usage_quantity": 1,
+    "unit": "instance-month",
+    "cost_inr": 8200,
+    "desc": "Fitness tracking platform - database"
+  },
+  {
+    "month": "2025-01",
+    "service": "Load Balancer",
+    "resource_id": "lb-01",
+    "region": "ap-south-1",
+    "usage_type": "Networking per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 3500,
+    "desc": "Fitness tracking platform - load balancer"
+  },
+  {
+    "month": "2025-01",
+    "service": "Load Balancer",
+    "resource_id": "lb-02",
+    "region": "ap-south-1",
+    "usage_type": "Networking per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 3500,
+    "desc": "Fitness tracking platform - load balancer"
+  },
+  {
+    "month": "2025-01",
+    "service": "Monitoring & Logs",
+    "resource_id": "monitor-01",
+    "region": "ap-south-1",
+    "usage_type": "Monitoring per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 1200,
+    "desc": "Fitness tracking platform - monitoring"
+  },
+  {
+    "month": "2025-01",
+    "service": "Monitoring & Logs",
+    "resource_id": "monitor-02",
+    "region": "ap-south-1",
+    "usage_type": "Monitoring per month",
+    "usage_quantity": 1,
+    "unit": "month",
+    "cost_inr": 1200,
+    "desc": "Fitness tracking platform - monitoring"
+  }
+]
