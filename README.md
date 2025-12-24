@@ -156,6 +156,7 @@ Choose project: 1
 
 The report will open in your browser. Press **Enter** to stop the server.
 
-### Exit
+### Step 5: Exit
 
 Select option `0` to exit the CLI.
+
