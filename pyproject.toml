@@ -1,7 +1,7 @@
 [project]
 name = "ai-powered-cloud-cost-optimizer"
 version = "0.1.0"
-description = "Add your description here"
+description = "An LLM-based tool that analyzes cloud infrastructure costs and generates actionable optimization recommendations based on a user’s project requirements, expected user load, and monthly budget. It helps teams understand cost drivers, identify inefficiencies, and make budget-aware architectural decisions early in the design phase."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
