@@ -1,5 +1,9 @@
 import os
 import json
+import webbrowser
+import http.server
+import socketserver
+import threading
 from dotenv import load_dotenv
 from services.project_report import generate_project_report
 from services.project_profile import generate_project_profile
@@ -124,8 +128,6 @@ def main():
                     display_recommendations_human_readable(data)
                 except Exception as e:
                     print(f"\u274C Error displaying recommendations: {e}")
-
-            # Extract HTML Report
             case "4":
                 try:
                     projects = list_project_folders(REPORTS_DIR)
@@ -154,6 +156,31 @@ def main():
                     
                     output_path = generate_project_report(project)
                     print(f"\u2705 HTML report generated at: {output_path}")
+                    PORT = 8000
+                    report_dir = os.path.dirname(output_path)
+                    report_filename = os.path.basename(output_path)
+                    
+                    class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
+                        def __init__(self, *args, **kwargs):
+                            super().__init__(*args, directory=report_dir, **kwargs)
+                        
+                        def log_message(self, format, *args):
+                            pass  
+                    
+                    def start_server():
+                        with socketserver.TCPServer(("", PORT), CustomHTTPRequestHandler) as httpd:
+                            httpd.serve_forever()
+                    
+                    server_thread = threading.Thread(target=start_server, daemon=True)
+                    server_thread.start()
+                    url = f"http://localhost:{PORT}/{report_filename}"
+                    print(f"\n🌐 Opening report in browser at: {url}")
+                    print("📌 Server is running. Press Enter to stop and return to menu...")
+                    webbrowser.open(url)
+                    
+                    input()  
+                    print("\u2705 Server stopped.")
+                    
                 except Exception as e:
                     print(f"\u274C Error extracting HTML report: {e}")
             # Exit

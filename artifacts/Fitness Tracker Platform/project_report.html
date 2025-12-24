@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fitness Tracker Platform – Project Report</title>
+    <style>
+        :root {
+            --primary: #1f2937;   /* slate-800 */
+            --secondary: #4b5563; /* gray-600 */
+            --border: #e5e7eb;    /* gray-200 */
+            --bg-light: #f9fafb;  /* gray-50 */
+            --good: #15803d;      /* green-700 */
+            --bad: #b91c1c;       /* red-700 */
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 40px;
+            color: var(--primary);
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 4px;
+            color: var(--primary);
+        }
+
+        p {
+            color: var(--secondary);
+            margin: 6px 0;
+        }
+
+        .section {
+            margin-top: 28px;
+            padding: 18px 20px;
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+            background: #ffffff;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #f3f4f6;
+            text-align: left;
+            padding: 10px;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border);
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .good {
+            color: var(--good);
+            font-weight: 600;
+        }
+
+        .bad {
+            color: var(--bad);
+            font-weight: 600;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding: 10px;
+            background: #ffffff;
+            border-left: 4px solid var(--primary);
+            border-radius: 4px;
+            list-style-type: none;
+        }
+
+        li strong {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--primary);
+        }
+
+        /* Print-friendly */
+        @media print {
+            body {
+                margin: 20px;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<h1>Fitness Tracker Platform</h1>
+<p>Fitness tracking platform for 18,000 users per month.</p>
+
+<div class="section">
+    <h2>Budget Overview</h2>
+    <p>Monthly Budget: ₹55000</p>
+    <p>Current Total Cost: ₹103980</p>
+    <p>
+        Status:
+        
+            <span class="bad">Over Budget</span>
+        
+    </p>
+</div>
+
+<div class="section">
+    <h2>Service Cost Breakdown</h2>
+    <table>
+        <tr>
+            <th>Service</th>
+            <th>Monthly Cost (₹)</th>
+        </tr>
+        
+        <tr>
+            <td>Compute Large VM</td>
+            <td>58500</td>
+        </tr>
+        
+        <tr>
+            <td>Compute Small VM</td>
+            <td>9800</td>
+        </tr>
+        
+        <tr>
+            <td>Object Storage Standard Storage</td>
+            <td>1680</td>
+        </tr>
+        
+        <tr>
+            <td>Managed SQL DB (Small)</td>
+            <td>24600</td>
+        </tr>
+        
+        <tr>
+            <td>Load Balancer</td>
+            <td>7000</td>
+        </tr>
+        
+        <tr>
+            <td>Monitoring & Logs</td>
+            <td>2400</td>
+        </tr>
+        
+    </table>
+</div>
+
+<div class="section">
+    <h2>Optimization Recommendations</h2>
+    <ul>
+        
+        <li>
+            <strong>Right-sizing Compute Large VM to AWS Free Tier</strong><br>
+            Service: Compute Large VM |
+            Current: ₹58500 |
+            Potential Savings: ₹44500
+        </li>
+        
+        <li>
+            <strong>Use Azure Managed SQL DB for Database</strong><br>
+            Service: Managed SQL DB (Small) |
+            Current: ₹24600 |
+            Potential Savings: ₹9200
+        </li>
+        
+        <li>
+            <strong>Use Open Source Prometheus for Monitoring & Logs</strong><br>
+            Service: Monitoring & Logs |
+            Current: ₹4800 |
+            Potential Savings: ₹4800
+        </li>
+        
+        <li>
+            <strong>Use Free Tier for Load Balancer</strong><br>
+            Service: Load Balancer |
+            Current: ₹7000 |
+            Potential Savings: ₹7000
+        </li>
+        
+        <li>
+            <strong>Use Right-Sizing for Compute Small VM</strong><br>
+            Service: Compute Small VM |
+            Current: ₹9800 |
+            Potential Savings: ₹9800
+        </li>
+        
+        <li>
+            <strong>Use Open Source Apache Cassandra for Database</strong><br>
+            Service: Managed SQL DB (Small) |
+            Current: ₹24600 |
+            Potential Savings: ₹10000
+        </li>
+        
+        <li>
+            <strong>Use Spot Instances for Compute Small VM</strong><br>
+            Service: Compute Small VM |
+            Current: ₹9800 |
+            Potential Savings: ₹9800
+        </li>
+        
+        <li>
+            <strong>Use Azure Reserved Instances for Compute Small VM</strong><br>
+            Service: Compute Small VM |
+            Current: ₹9800 |
+            Potential Savings: ₹4900
+        </li>
+        
+    </ul>
+</div>
+
+</body>
+</html>
